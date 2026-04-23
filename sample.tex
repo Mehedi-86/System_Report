@@ -13,344 +13,803 @@
 \normalsize
 \setlength{\parindent}{0.5in}
 \setlength{\parskip}{0pt}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
 
 \begin{document}
-
-% ------------------------------
-% Top Page / Cover Page
-% ------------------------------
-\begin{titlepage}
-\thispagestyle{empty}
-\begin{center}
-{\large \textbf{CSE 3200: System Development Project}}\\[1.5\baselineskip]
-{\LARGE \textbf{AN EFFICIENT IMPLEMENTATION SCHEME FOR}}\\[0.7\baselineskip]
-{\LARGE \textbf{RESTRICTEDIDE-V2: A SECURE EXAMINATION IDE}}\\[2\baselineskip]
-
-{\large By}\\[2\baselineskip]
-
-{\large \textbf{John Doe}}\\
-{\large Roll: 2007001}\\[0.5\baselineskip]
-{\large \&}\\[0.5\baselineskip]
-{\large \textbf{Jane Doe}}\\
-{\large Roll: 2007002}\\[3\baselineskip]
-
-\fbox{\parbox[c][1.14in][c]{1.0in}{\centering KUET\\Logo}}\\[2\baselineskip]
-
-{\large \textbf{Department of Computer Science and Engineering}}\\
-{\large \textbf{Khulna University of Engineering \& Technology}}\\
-{\large \textbf{Khulna 9203, Bangladesh}}\\
-{\large \textbf{April, 2026}}
-\end{center}
-\end{titlepage}
-
-% ------------------------------
-% Title Page
-% ------------------------------
-\begin{titlepage}
-\begin{center}
-{\LARGE \textbf{An Efficient Implementation Scheme for}}\\[0.7\baselineskip]
-{\LARGE \textbf{RestrictedIDE-V2}}\\[2\baselineskip]
-
-{\large By}\\[1.5\baselineskip]
-{\large \textbf{John Doe}}\\
-{\large Roll: 2007001}\\[0.5\baselineskip]
-{\large \&}\\[0.5\baselineskip]
-{\large \textbf{Jane Doe}}\\
-{\large Roll: 2007002}\\[3\baselineskip]
-
-\begin{flushleft}
-\textbf{Supervisor:}\\
-\textbf{Mr. Xyz}\\
-Professor\\
-Department of Computer Science and Engineering\\
-Khulna University of Engineering \& Technology
-\end{flushleft}
-
-\vfill
-{\large Department of Computer Science and Engineering}\\
-{\large Khulna University of Engineering \& Technology}\\
-{\large Khulna 9203, Bangladesh}\\
-{\large April, 2026}
-\end{center}
-\end{titlepage}
-
-\pagenumbering{roman}
-
-% ------------------------------
-% Acknowledgment
-% ------------------------------
-\chapter*{Acknowledgment}
-\addcontentsline{toc}{chapter}{Acknowledgment}
-
-All praise and gratitude to Almighty Allah for providing us strength, patience, and guidance to complete this project work. We express our sincere thanks to our supervisor, \textbf{Mr. Xyz}, for his continuous support, valuable suggestions, and constructive feedback throughout the project lifecycle.
-
-We also acknowledge the Department of Computer Science and Engineering, Khulna University of Engineering \& Technology, for providing the academic environment and facilities required to conduct this work. Finally, we thank our classmates and well-wishers for their encouragement and helpful discussions.
-
-\begin{flushright}
-\textbf{Authors}
-\end{flushright}
-
-% ------------------------------
-% Abstract
-% ------------------------------
-\chapter*{Abstract}
-\addcontentsline{toc}{chapter}{Abstract}
-
-RestrictedIDE-V2 is a secure, policy-driven examination Integrated Development Environment (IDE) designed to support controlled programming assessments in both standalone and LAN-based lab settings. Traditional online coding platforms often depend on cloud connectivity and provide limited control over host-level behavior, which creates challenges for institutions that require strict invigilation, offline operation, and local policy enforcement. This project addresses those challenges by combining a lightweight frontend IDE with a Rust/Tauri backend that can enforce execution and interaction constraints.
-
-The system uses a modular architecture with a JavaScript-based editor interface and a command-oriented Rust service layer. Core capabilities include session creation and join workflows, timed assessments, controlled code execution, role-based administration, and event logging. A policy engine validates operations such as file access, process invocation, timing, and user actions before command execution. A local SQLite store maintains sessions, participants, submissions, violations, and broadcast events, while a LAN server enables multi-user assessment in offline campus networks.
-
-Security features in the current implementation include focus monitoring, clipboard/screenshot guarding hooks, and keyboard/process restrictions (platform-dependent), supported by centralized configuration and auditable logs. Experimental usage in project-level test scenarios shows that the platform can provide stable exam orchestration, deterministic submission flows, and improved control compared with a generic IDE setup. RestrictedIDE-V2 demonstrates a practical approach to building a controlled coding assessment platform with extensible policy and runtime boundaries.
-
-% ------------------------------
-% Contents and lists
-% ------------------------------
-\tableofcontents
-\listoftables
-\listoffigures
-
-\clearpage
-\pagenumbering{arabic}
-
-% ------------------------------
-% CHAPTER I
-% ------------------------------
-\chapter{Introduction}
-
-\section{Introduction}
-Programming assessments demand a reliable environment that is fair, secure, and easy to administer. In conventional lab examinations, students may rely on unrestricted local tools, open browser tabs, or unauthorized resources, which reduces assessment integrity. RestrictedIDE-V2 is proposed as a focused examination IDE to enforce policy constraints while preserving usability for students and instructors.
-
-\section{Background / Problem Statement}
-Institutions that run programming exams often face the following operational problems:
-\begin{itemize}
-  \item Lack of offline-capable assessment infrastructure.
-  \item Weak host-level controls for application and process usage.
-  \item Manual exam management and submission collection.
-  \item Poor auditability of policy violations and exam events.
-\end{itemize}
-RestrictedIDE-V2 addresses these challenges through local-first architecture, session management, structured policy checks, and centralized records.
-
-\section{Objectives}
-The primary objectives of this project are:
-\begin{itemize}
-  \item Design a secure IDE for controlled coding assessments.
-  \item Implement exam session creation, join, and dashboard workflows.
-  \item Enforce configurable policies for file/process/time/access control.
-  \item Support timed submissions and violation monitoring.
-  \item Provide maintainable architecture for future extension.
-\end{itemize}
-
-\section{Scope of the Work}
-The project covers frontend editor integration, backend command orchestration, policy enforcement, database operations, and LAN session transport. It includes desktop deployment through Tauri and practical tools for exam administration. External cloud synchronization and cross-platform parity for all low-level controls are considered future extensions.
-
-\section{Unfamiliarity of the Problem / Novelty}
-Unlike generic IDE wrappers, RestrictedIDE-V2 combines assessment workflow management with policy-aware runtime control in a single packaged desktop app. The novelty is in integrating editor usability, local transport, and enforcement modules under an extensible command architecture suitable for institutional labs.
-
-\section{Project Planning and Work Distribution}
-The work plan followed requirement analysis, architecture design, implementation, integration testing, and documentation phases. Frontend and backend modules were developed in parallel with weekly integration checkpoints.
-
-\subsection{Work Distribution (for two or more students)}
-\textbf{Student A} focused on frontend modules, Monaco integration, and session screens.\
-\textbf{Student B} focused on Rust commands, policy/runtime modules, and storage/transport.\
-Both collaborated on testing, deployment scripts, and final report preparation.
-
-\section{Applications of the Work}
-RestrictedIDE-V2 can be used for university lab exams, programming contests in controlled labs, recruitment coding tests within intranet-only environments, and classroom exercises requiring restricted tool usage.
-
-\section{Organization of the Project}
-This report is structured as follows: Chapter II reviews related works; Chapter III explains methodology and design; Chapter IV presents implementation and results; Chapter V addresses societal, ethical, legal, and environmental aspects; Chapter VI discusses complex engineering problems; and Chapter VII concludes the report.
-
-% ------------------------------
-% CHAPTER II
-% ------------------------------
-\chapter{Related Works}
-
-\section{Introduction}
-Secure coding assessments are commonly delivered through cloud judges, LMS plugins, or locked browser environments. These systems usually emphasize result correctness and plagiarism detection but provide limited local runtime control.
-
-\section{Related Works}
-Existing online judge systems such as HackerRank-style platforms provide strong evaluation pipelines but depend on internet connectivity and remote sandbox infrastructures. Lockdown browser systems focus on web restrictions rather than full IDE workflows. Desktop exam systems often lack modular policy engines and do not combine session, runtime, and admin control in one local framework.
-
-\section{Discussion}
-RestrictedIDE-V2 is positioned between cloud judges and basic lockdown tools. It emphasizes local operation, extensible policies, and exam-specific desktop workflow control. This balance makes it suitable for universities with constrained network conditions.
-
-% ------------------------------
-% CHAPTER III
-% ------------------------------
-\chapter{Methodology}
-
-\section{Introduction}
-This chapter explains the engineering approach used to design and implement RestrictedIDE-V2.
-
-\section{Detailed Methodology}
-The development process followed an incremental modular approach:
-\begin{itemize}
-  \item Requirement analysis from exam administration use cases.
-  \item Separation of concerns across frontend, command layer, policy engine, and runtime/security modules.
-  \item Iterative integration and functional verification.
-\end{itemize}
-
-\subsection{Problem Design and Analysis}
-The system was modeled around three actor groups: admin, student, and runtime enforcer. Data entities were derived as sessions, participants, submissions, violations, and broadcasts.
-
-\subsection{Overall Framework / Flowchart}
-\begin{figure}[htbp]
-\centering
-\fbox{\parbox{0.9\textwidth}{
-\centering
-Admin creates session $\rightarrow$ Students join via code $\rightarrow$\
-Timed coding in restricted IDE $\rightarrow$ Submission and violation logging $\rightarrow$\
-Admin reviews dashboard and post-session outcomes
-}}
-\caption{High-level workflow of RestrictedIDE-V2 assessment lifecycle}
-\end{figure}
-
-\subsection{Core Algorithmic Logic}
-Policy evaluation follows a guard-before-execution approach. For each command request, applicable rules are checked first; if any rule fails, the operation is blocked and an event is logged.
-
-\begin{table}[htbp]
-\centering
-\caption{Representative policy checks used in command validation}
-\begin{tabular}{|p{0.25\textwidth}|p{0.65\textwidth}|}
-\hline
-\textbf{Policy Area} & \textbf{Validation Goal} \\
-\hline
-File access & Ensure student operations remain within allowed workspace scope \\
-\hline
-Time rule & Enforce session duration and submission deadline constraints \\
-\hline
-Process rule & Block disallowed process invocation patterns \\
-\hline
-Keyboard/interaction rule & Restrict unsafe key combinations during lockdown mode \\
-\hline
-URL rule & Prevent unauthorized external access during exam session \\
-\hline
-\end{tabular}
-\end{table}
-
-\section{Conclusion}
-The methodology ensured traceability from requirements to implementation while preserving maintainability through module isolation.
-
-% ------------------------------
-% CHAPTER IV
-% ------------------------------
-\chapter{Implementation, Results and Discussions}
-
-\section{Introduction}
-This chapter presents the implemented modules and discusses system behavior under practical test conditions.
-
-\section{Experimental Setup}
-The system was tested on desktop environments with Tauri runtime and local SQLite storage. Both single-machine and LAN-connected scenarios were used for validation.
-
-\section{Evaluation Metrics}
-The following metrics were considered:
-\begin{itemize}
-  \item Session setup success rate.
-  \item Average join latency in LAN mode.
-  \item Submission completion before timeout.
-  \item Violation event detection consistency.
-\end{itemize}
-
-\section{Dataset}
-No external ML dataset is required for this project. Test artifacts include exam session records, submission logs, and synthetic student interactions.
-
-\section{Implementation and Results}
-\subsection{Qualitative Results}
-The UI flow supports intuitive exam operations: session creation, participant join, coding, timer tracking, and final submission. Administrative dashboard views improve invigilation efficiency.
-
-\subsection{Quantitative Observations}
-Trial runs indicate stable local performance with consistent session state persistence and deterministic submission handling when timers expire.
-
-\subsection{Analysis of the Results}
-Results confirm that combining policy checks with command-layer control significantly reduces unmanaged actions compared with unrestricted IDE usage. The architecture also simplifies future hardening and feature extension.
-
-\section{Objective Achieved}
-The project objectives stated in Chapter I are achieved at a functional prototype level: secure session operation, policy-guarded workflows, and detailed exam record management are all operational.
-
-\section{Conclusion}
-RestrictedIDE-V2 demonstrates that a desktop-first secure exam IDE can be practical, extensible, and institution-friendly.
-
-% ------------------------------
-% CHAPTER V
-% ------------------------------
-\chapter{Societal, Health, Environment, Safety, Ethical, Legal and Cultural Issues}
-
-\section{Intellectual Property Considerations}
-The project uses open-source components under their respective licenses. Internal modules are original development artifacts and should be versioned with clear ownership and contribution records.
-
-\section{Ethical Considerations}
-The platform collects operational data (submissions and violations), so transparency and informed policy disclosure are essential. Monitoring scope should be proportional to assessment requirements.
-
-\section{Safety Considerations}
-From software safety perspective, robust failure handling is required to prevent accidental data loss during timed submission and to avoid false-positive lockouts.
-
-\section{Legal Considerations}
-Institutions deploying this platform must comply with applicable privacy and data-protection laws, and maintain retention policies for exam records.
-
-\section{Impact of the Project on Societal, Health, and Cultural Issues}
-The system can improve fairness in technical education by standardizing the assessment environment across diverse lab settings, including low-bandwidth campuses.
-
-\subsection{Societal Impact}
-It supports equitable assessment by reducing dependence on external infrastructure and minimizing unauthorized advantage.
-
-\subsection{Health Impact}
-Clear UI and predictable exam flow reduce stress for students and invigilators during high-stakes lab evaluations.
-
-\subsection{Cultural Impact}
-Local-first deployment aligns with institutions where policy, language, and operational customs require configurable exam workflows.
-
-\section{Impact of the Project on the Environment and Sustainability}
-Using lightweight local infrastructure can reduce repeated cloud compute usage for institutional exams. Long-term sustainability depends on efficient code execution constraints and hardware lifecycle practices.
-
-% ------------------------------
-% CHAPTER VI
-% ------------------------------
-\chapter{Addressing Complex Engineering Problems and Activities}
-
-\section{Complex Engineering Problems Associated with the Project}
-The project addresses a multi-constraint systems problem involving security, usability, reliability, offline operation, and cross-platform desktop integration.
-
-\section{Complex Engineering Activities Associated with the Project}
-Key activities include policy-rule modeling, IPC command design, database schema coordination, UI-runtime synchronization, and controlled execution management.
-
-% ------------------------------
-% CHAPTER VII
-% ------------------------------
-\chapter{Conclusions}
-
-\section{Summary}
-RestrictedIDE-V2 provides a practical secure examination IDE architecture with modular policy enforcement, session orchestration, and local-first runtime capabilities.
-
-\section{Limitations}
-Some security controls are platform-dependent, and advanced execution isolation can be improved with stronger OS-level sandboxing.
-
-\section{Recommendations and Future Works}
-Future development should include:
-\begin{itemize}
-  \item Cross-platform parity for low-level lockdown controls.
-  \item Stronger process isolation and resource quotas.
-  \item Optional secure online synchronization and analytics.
-  \item Enhanced proctor dashboard with richer violation forensics.
-\end{itemize}
-
-% ------------------------------
-% Appendices
-% ------------------------------
-\appendix
-\chapter{Additional Technical Notes}
-This appendix may include command references, deployment notes, screenshots, and environment-specific setup instructions used during implementation and testing.
-
-% ------------------------------
-% References
-% ------------------------------
-\chapter*{References}
-\addcontentsline{toc}{chapter}{References}
-\begin{enumerate}
-  \item M. Fowler, \textit{Patterns of Enterprise Application Architecture}, Addison-Wesley, 2002.
-  \item S. Kleppmann, \textit{Designing Data-Intensive Applications}, O'Reilly Media, 2017.
-  \item D. J. Bernstein, ``Containers and sandboxing principles,'' technical notes, 2019.
-  \item The Rust Team, ``The Rust Programming Language,'' https://www.rust-lang.org/.
-  \item Tauri Contributors, ``Tauri Documentation,'' https://tauri.app/.
-\end{enumerate}
-
+	
+	% ------------------------------
+	% Top Page / Cover Page
+	% ------------------------------
+	\begin{titlepage}
+		\thispagestyle{empty}
+		\begin{center}
+			{\large \textbf{CSE 3200: System Development Project}}\\[1.5\baselineskip]
+			{\LARGE \textbf{AN EFFICIENT IMPLEMENTATION SCHEME FOR}}\\[0.7\baselineskip]
+			{\LARGE \textbf{RESTRICTEDIDE-V2: A SECURE EXAMINATION IDE}}\\[2\baselineskip]
+			
+			{\large By}\\[2\baselineskip]
+			
+			{\large \textbf{Mehedi Hasan}}\\
+			{\large Roll: 2107086}\\[0.5\baselineskip]
+			{\large \&}\\[0.5\baselineskip]
+			{\large \textbf{Mubin Islam Alif}}\\
+			{\large Roll: 2107090}\\[3\baselineskip]
+			
+			\fbox{\parbox[c][1.14in][c]{1.0in}{\centering KUET\\Logo}}\\[2\baselineskip]
+			
+			{\large \textbf{Department of Computer Science and Engineering}}\\
+			{\large \textbf{Khulna University of Engineering \& Technology}}\\
+			{\large \textbf{Khulna 9203, Bangladesh}}\\
+			{\large \textbf{April, 2026}}
+		\end{center}
+	\end{titlepage}
+	
+	% ------------------------------
+	% Title Page
+	% ------------------------------
+	\begin{titlepage}
+		\begin{center}
+			{\LARGE \textbf{An Efficient Implementation Scheme for}}\\[0.7\baselineskip]
+			{\LARGE \textbf{RestrictedIDE-V2}}\\[2\baselineskip]
+			
+			{\large By}\\[1.5\baselineskip]
+			{\large \textbf{Mehedi Hasan}}\\
+			{\large Roll: 2107086}\\[0.5\baselineskip]
+			{\large \&}\\[0.5\baselineskip]
+			{\large \textbf{Mubin Islam Alif}}\\
+			{\large Roll: 2107090}\\[3\baselineskip]
+			
+			\begin{flushleft}
+				\textbf{Supervisor:}\\
+				\textbf{Mr. Xyz}\\
+				Professor\\
+				Department of Computer Science and Engineering\\
+				Khulna University of Engineering \& Technology
+			\end{flushleft}
+			
+			\vfill
+			{\large Department of Computer Science and Engineering}\\
+			{\large Khulna University of Engineering \& Technology}\\
+			{\large Khulna 9203, Bangladesh}\\
+			{\large April, 2026}
+		\end{center}
+	\end{titlepage}
+	
+	\pagenumbering{roman}
+	
+	% ------------------------------
+	% Acknowledgment
+	% ------------------------------
+	\chapter*{Acknowledgment}
+	\addcontentsline{toc}{chapter}{Acknowledgment}
+	
+	All praise and gratitude to Almighty Allah for providing us strength, patience, and guidance to complete this project work. We express our sincere thanks to our supervisor, \textbf{Mr. Xyz}, for his continuous support, valuable suggestions, and constructive feedback throughout the project lifecycle.
+	
+	We also acknowledge the Department of Computer Science and Engineering, Khulna University of Engineering \& Technology, for providing the academic environment and facilities required to conduct this work. Finally, we thank our classmates and well-wishers for their encouragement and helpful discussions.
+	
+	\begin{flushright}
+		\textbf{Authors}
+	\end{flushright}
+	
+	% ------------------------------
+	% Abstract
+	% ------------------------------
+	\chapter*{Abstract}
+	\addcontentsline{toc}{chapter}{Abstract}
+	
+	RestrictedIDE-V2 is a secure, policy-driven examination Integrated Development Environment (IDE) designed to support controlled programming assessments in both standalone and LAN-based lab settings. Traditional online coding platforms often depend on cloud connectivity and provide limited control over host-level behavior, which creates challenges for institutions that require strict invigilation, offline operation, and local policy enforcement. This project addresses those challenges by combining a lightweight frontend IDE with a Rust/Tauri backend that can enforce execution and interaction constraints.
+	
+	The system uses a modular architecture with a JavaScript-based editor interface and a command-oriented Rust service layer. Core capabilities include session creation and join workflows, timed assessments, controlled code execution, role-based administration, and event logging. A policy engine validates operations such as file access, process invocation, timing, and user actions before command execution. A local SQLite store maintains sessions, participants, submissions, violations, and broadcast events, while a LAN server enables multi-user assessment in offline campus networks.
+	
+	Security features in the current implementation include focus monitoring, clipboard/screenshot guarding hooks, and keyboard/process restrictions (platform-dependent), supported by centralized configuration and auditable logs. Experimental usage in project-level test scenarios shows that the platform can provide stable exam orchestration, deterministic submission flows, and improved control compared with a generic IDE setup. RestrictedIDE-V2 demonstrates a practical approach to building a controlled coding assessment platform with extensible policy and runtime boundaries.
+	
+	This report documents the full project lifecycle in detail: requirement engineering, architectural decomposition, policy design, implementation strategy, validation methodology, and ethical/societal analysis. In addition to describing the technical decisions, the report includes module-level explanations, operational workflows, simulated performance observations, risks, limitations, and a comprehensive roadmap for future development. The objective is not only to present a working artifact, but also to establish a repeatable engineering reference for secure coding assessment platforms in academic institutions.
+	
+	% ------------------------------
+	% Contents and lists
+	% ------------------------------
+	\tableofcontents
+	\listoftables
+	\listoffigures
+	
+	\clearpage
+	\pagenumbering{arabic}
+	
+	% ------------------------------
+	% CHAPTER I
+	% ------------------------------
+	\chapter{Introduction}
+	
+	\section{Introduction}
+	Programming assessments demand a reliable environment that is fair, secure, and easy to administer. In conventional lab examinations, students may rely on unrestricted local tools, open browser tabs, or unauthorized resources, which reduces assessment integrity. RestrictedIDE-V2 is proposed as a focused examination IDE to enforce policy constraints while preserving usability for students and instructors.
+	
+	In many educational contexts, the practical challenge is not whether programming can be evaluated, but whether the evaluation can be conducted in a controlled, transparent, and repeatable environment. Traditional methods, such as manually collecting source files through external storage devices, lead to inconsistent timing, missing submissions, and weak traceability. Web-only platforms solve some of these concerns, yet they may fail when internet connectivity is unstable or when organizations require on-premise deployment for compliance reasons.
+	
+	RestrictedIDE-V2 addresses this operational gap by unifying the coding environment, session orchestration, security policy checks, and submission management in one desktop application. The solution follows a local-first architecture with optional LAN communication, allowing institutions to run assessments in isolated laboratory networks. In essence, the project aims to create a practical bridge between strict invigilation requirements and developer-friendly exam workflows.
+	
+	\section{Background / Problem Statement}
+	Institutions that run programming exams often face the following operational problems:
+	\begin{itemize}
+		\item Lack of offline-capable assessment infrastructure.
+		\item Weak host-level controls for application and process usage.
+		\item Manual exam management and submission collection.
+		\item Poor auditability of policy violations and exam events.
+	\end{itemize}
+	RestrictedIDE-V2 addresses these challenges through local-first architecture, session management, structured policy checks, and centralized records.
+	
+	From a systems perspective, the problem can be reframed as a constrained execution environment challenge. Students require sufficient freedom to write, run, and debug code; however, the examination authority requires constraints that prevent external assistance, unauthorized resource usage, and post-deadline manipulation. Designing a platform that satisfies both demands requires careful boundary control across UI behavior, file operations, process lifecycle, timing semantics, and communication channels.
+	
+	The project therefore defines the following core problem statement: \textit{How can a desktop IDE be transformed into an assessment-grade platform that enforces institutional policies while retaining acceptable usability and maintainability?} This statement drives all subsequent architectural and implementation decisions described in this report.
+	
+	\section{Objectives}
+	The primary objectives of this project are:
+	\begin{itemize}
+		\item Design a secure IDE for controlled coding assessments.
+		\item Implement exam session creation, join, and dashboard workflows.
+		\item Enforce configurable policies for file/process/time/access control.
+		\item Support timed submissions and violation monitoring.
+		\item Provide maintainable architecture for future extension.
+	\end{itemize}
+	
+	In addition to these primary objectives, the project also pursues several secondary targets:
+	\begin{itemize}
+		\item Ensure modular separation so that policy logic can evolve without redesigning the entire application.
+		\item Provide auditable events for post-exam analysis and dispute resolution.
+		\item Keep deployment lightweight enough for ordinary academic lab machines.
+		\item Support maintainable code organization for future contributors.
+	\end{itemize}
+	
+	\section{Scope of the Work}
+	The project covers frontend editor integration, backend command orchestration, policy enforcement, database operations, and LAN session transport. It includes desktop deployment through Tauri and practical tools for exam administration. External cloud synchronization and cross-platform parity for all low-level controls are considered future extensions.
+	
+	The scope intentionally excludes advanced plagiarism detection engines, biometric proctoring, and cloud-scale container orchestration. Those features can be integrated later, but they are not required to validate the core thesis of this work. By constraining scope, the team prioritized architecture stability, predictable operation, and incremental extensibility.
+	
+	\section{Unfamiliarity of the Problem / Novelty}
+	Unlike generic IDE wrappers, RestrictedIDE-V2 combines assessment workflow management with policy-aware runtime control in a single packaged desktop app. The novelty is in integrating editor usability, local transport, and enforcement modules under an extensible command architecture suitable for institutional labs.
+	
+	The specific novelty of RestrictedIDE-V2 may be summarized in three engineering contributions:
+	\begin{enumerate}
+		\item \textbf{Policy-guarded command execution:} all critical runtime actions are routed through backend commands that can be validated by centralized policy rules.
+		\item \textbf{Offline-capable session orchestration:} exam workflow remains operational even without internet connectivity, using local storage and LAN transport.
+		\item \textbf{Security-aware desktop UX:} the IDE interface is optimized for exam flow while integrating restrictions such as timed submissions and monitored events.
+	\end{enumerate}
+	
+	\section{Project Planning and Work Distribution}
+	The work plan followed requirement analysis, architecture design, implementation, integration testing, and documentation phases. Frontend and backend modules were developed in parallel with weekly integration checkpoints.
+	
+	The timeline was divided into five milestones:
+	\begin{itemize}
+		\item \textbf{Milestone 1:} requirement gathering, stakeholder interviews, and problem framing.
+		\item \textbf{Milestone 2:} architecture blueprint, data model design, and command interface drafting.
+		\item \textbf{Milestone 3:} frontend-backend implementation of minimum viable exam workflow.
+		\item \textbf{Milestone 4:} security and policy integration, test scenario execution, and bug fixes.
+		\item \textbf{Milestone 5:} documentation, report writing, and final demonstration preparation.
+	\end{itemize}
+	
+	\subsection{Work Distribution (for two or more students)}
+	\textbf{Mehedi Hasan (Roll: 2107086)} focused on frontend modules, Monaco integration, session interfaces, and user workflow optimization. Responsibilities included UI composition, client-side state coordination, timer-linked submission flow, and dashboard interaction design.\
+	\textbf{Mubin Islam Alif (Roll: 2107090)} focused on Rust command modules, policy/runtime architecture, secure execution controls, and persistence/transport integration. Responsibilities included backend command orchestration, database operations, policy rule wiring, and LAN session service handling.\
+	Both members collaborated on integration testing, error tracing, deployment scripts, report preparation, and presentation artifacts.
+	
+	\section{Applications of the Work}
+	RestrictedIDE-V2 can be used for university lab exams, programming contests in controlled labs, recruitment coding tests within intranet-only environments, and classroom exercises requiring restricted tool usage.
+	
+	The architecture also supports use cases beyond conventional exams, such as secure coding workshops, timed onboarding assessments in training programs, and controlled practical evaluations in certification environments.
+	
+	\section{Organization of the Project}
+	This report is structured as follows: Chapter II reviews related works; Chapter III explains methodology and design; Chapter IV presents implementation and results; Chapter V addresses societal, ethical, legal, and environmental aspects; Chapter VI discusses complex engineering problems; and Chapter VII concludes the report.
+	
+	To improve readability, each chapter begins with context and scope, followed by module-level detail and concluding remarks. Figures and tables are used to summarize workflows, design decisions, and test observations.
+	
+	% ------------------------------
+	% CHAPTER II
+	% ------------------------------
+	\chapter{Related Works}
+	
+	\section{Introduction}
+	Secure coding assessments are commonly delivered through cloud judges, LMS plugins, or locked browser environments. These systems usually emphasize result correctness and plagiarism detection but provide limited local runtime control.
+	
+	\section{Related Works}
+	Existing online judge systems such as HackerRank-style platforms provide strong evaluation pipelines but depend on internet connectivity and remote sandbox infrastructures. Lockdown browser systems focus on web restrictions rather than full IDE workflows. Desktop exam systems often lack modular policy engines and do not combine session, runtime, and admin control in one local framework.
+	
+	Several literature streams are relevant to this project:
+	\begin{itemize}
+		\item \textbf{Online judge platforms:} highly scalable, centralized evaluation systems with problem bank management and automatic verdicting.
+		\item \textbf{Secure browser ecosystems:} controlled exam interfaces for web-based assessments that restrict navigation and clipboard actions.
+		\item \textbf{Desktop sandbox research:} host-level restrictions for process/file isolation, often used in enterprise endpoint security.
+		\item \textbf{Hybrid assessment tools:} systems that combine local coding and periodic server synchronization.
+	\end{itemize}
+	
+	Most of these systems optimize one dimension strongly (for example, internet-scale evaluation) but do not fully satisfy local institutional constraints, particularly in environments where reliable internet or cloud compliance pathways are unavailable.
+	
+	\section{Comparative Analysis}
+	Table \ref{tab:comparison} summarizes the relative position of RestrictedIDE-V2 with common alternatives.
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Comparative view of assessment solutions}
+		\label{tab:comparison}
+		\begin{tabular}{|p{0.18\textwidth}|p{0.22\textwidth}|p{0.2\textwidth}|p{0.28\textwidth}|}
+			\hline
+			\textbf{System Type} & \textbf{Strength} & \textbf{Weakness} & \textbf{Relevance to RestrictedIDE-V2} \\
+			\hline
+			Cloud online judge & Automatic evaluation at scale & Internet dependency, weaker host-level control & Useful for future remote verdict integration \\
+			\hline
+			Lockdown browser & Strong web session restriction & Not IDE-native for coding exams & Provides policy design inspiration \\
+			\hline
+			Generic desktop IDE & Excellent coding UX & Minimal exam governance & Baseline usability benchmark \\
+			\hline
+			RestrictedIDE-V2 & Offline-first, policy-aware, exam-centric & Some platform-dependent controls remain & Balanced solution for institutional lab exams \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\section{Discussion}
+	RestrictedIDE-V2 is positioned between cloud judges and basic lockdown tools. It emphasizes local operation, extensible policies, and exam-specific desktop workflow control. This balance makes it suitable for universities with constrained network conditions.
+	
+	The comparative analysis suggests a practical trade-off: while cloud-native systems may offer richer evaluation ecosystems, a controlled desktop platform offers greater autonomy, infrastructure predictability, and direct policy governance for physical lab examinations. This positioning is aligned with the needs identified during requirement analysis.
+	
+	% ------------------------------
+	% CHAPTER III
+	% ------------------------------
+	\chapter{Methodology}
+	
+	\section{Introduction}
+	This chapter explains the engineering approach used to design and implement RestrictedIDE-V2.
+	
+	\section{Detailed Methodology}
+	The development process followed an incremental modular approach:
+	\begin{itemize}
+		\item Requirement analysis from exam administration use cases.
+		\item Separation of concerns across frontend, command layer, policy engine, and runtime/security modules.
+		\item Iterative integration and functional verification.
+	\end{itemize}
+	
+	Methodological decisions were guided by four principles:
+	\begin{itemize}
+		\item \textbf{Traceability:} every major feature maps to a documented requirement.
+		\item \textbf{Isolation:} modules communicate through clear interfaces to reduce side effects.
+		\item \textbf{Policy-first security:} sensitive actions are validated before execution.
+		\item \textbf{Operational realism:} testing scenarios mirror actual lab exam constraints.
+	\end{itemize}
+	
+	\subsection{Problem Design and Analysis}
+	The system was modeled around three actor groups: admin, student, and runtime enforcer. Data entities were derived as sessions, participants, submissions, violations, and broadcasts.
+	
+	Use-case analysis produced the following critical interaction paths:
+	\begin{itemize}
+		\item Admin authenticates and creates session with timing and policy profile.
+		\item Student joins by session code and receives exam state.
+		\item Student performs coding and optional local execution under guard.
+		\item Timer expiry or manual submission triggers final submission record.
+		\item Admin reviews submissions, violations, and completion status.
+	\end{itemize}
+	
+	Threat modeling identified misuse vectors such as path traversal attempts, unauthorized process launching, session overrun manipulation, and policy bypass through direct command execution. These threat vectors directly influenced command gateway design.
+	
+	\subsection{Overall Framework / Flowchart}
+	\begin{figure}[htbp]
+		\centering
+		\fbox{\parbox{0.9\textwidth}{
+				\centering
+				Admin creates session $\rightarrow$ Students join via code $\rightarrow$\
+				Timed coding in restricted IDE $\rightarrow$ Submission and violation logging $\rightarrow$\
+				Admin reviews dashboard and post-session outcomes
+		}}
+		\caption{High-level workflow of RestrictedIDE-V2 assessment lifecycle}
+	\end{figure}
+	
+	\begin{figure}[htbp]
+		\centering
+		\fbox{\parbox{0.88\textwidth}{
+				\centering
+				Frontend Request $\rightarrow$ Rust Command Handler $\rightarrow$ Policy Engine $\rightarrow$\
+				Allowed: Execute + Log Success \quad / \quad Denied: Reject + Log Violation
+		}}
+		\caption{Guard-before-execution command pipeline}
+	\end{figure}
+	
+	\subsection{Core Algorithmic Logic}
+	Policy evaluation follows a guard-before-execution approach. For each command request, applicable rules are checked first; if any rule fails, the operation is blocked and an event is logged.
+	
+	The policy-check sequence can be represented by the following pseudo-process:
+	\begin{enumerate}
+		\item Identify command category and associated policy domains.
+		\item Resolve contextual metadata (user role, session state, path/process target, timestamp).
+		\item Evaluate deterministic rules in predefined order.
+		\item If all checks pass, execute command and persist outcome.
+		\item If any check fails, reject request and persist violation with reason code.
+	\end{enumerate}
+	
+	Let $R = \{r_1, r_2, \ldots, r_n\}$ denote rule predicates for a command context $c$. Execution is permitted only if:
+	\[
+	\forall r_i \in R,\ r_i(c)=\text{true}
+	\]
+	If at least one rule returns false, command state transitions to denied and an audit event is written.
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Representative policy checks used in command validation}
+		\begin{tabular}{|p{0.25\textwidth}|p{0.65\textwidth}|}
+			\hline
+			\textbf{Policy Area} & \textbf{Validation Goal} \\
+			\hline
+			File access & Ensure student operations remain within allowed workspace scope \\
+			\hline
+			Time rule & Enforce session duration and submission deadline constraints \\
+			\hline
+			Process rule & Block disallowed process invocation patterns \\
+			\hline
+			Keyboard/interaction rule & Restrict unsafe key combinations during lockdown mode \\
+			\hline
+			URL rule & Prevent unauthorized external access during exam session \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\section{System Decomposition}
+	The system is decomposed into seven cooperating layers:
+	\begin{enumerate}
+		\item \textbf{Presentation Layer:} editor, file tree, session screens, dashboard views.
+		\item \textbf{Client Workflow Layer:} state transitions, timer handling, submission triggers.
+		\item \textbf{Command API Layer:} typed command handlers for IPC calls.
+		\item \textbf{Policy Layer:} centralized rule evaluation engine.
+		\item \textbf{Runtime/Security Layer:} process and behavior constraints.
+		\item \textbf{Persistence Layer:} SQLite schema, CRUD, session history.
+		\item \textbf{Transport Layer:} LAN HTTP endpoints for multi-user coordination.
+	\end{enumerate}
+	
+	\section{Data Model Design}
+	The core entities include:
+	\begin{itemize}
+		\item \textbf{sessions:} exam metadata, configuration, start/end conditions.
+		\item \textbf{participants:} student join state and identity references.
+		\item \textbf{submissions:} code snapshots, timestamp, status metadata.
+		\item \textbf{violations:} policy breach records with reason and severity.
+		\item \textbf{broadcasts:} admin-wide notices and synchronization messages.
+	\end{itemize}
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Selected data fields used by RestrictedIDE-V2}
+		\begin{tabular}{|p{0.28\textwidth}|p{0.2\textwidth}|p{0.42\textwidth}|}
+			\hline
+			\textbf{Field} & \textbf{Type} & \textbf{Purpose} \\
+			\hline
+			session\_code & text & Unique human-readable join token \\
+			\hline
+			duration\_seconds & integer & Session deadline computation \\
+			\hline
+			submission\_payload & text/blob & Final answer snapshot and metadata \\
+			\hline
+			violation\_reason & text & Policy breach category for audit \\
+			\hline
+			created\_at / updated\_at & datetime & Event ordering and traceability \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\section{Testing Methodology}
+	Testing combined unit-level verification, command-level integration checks, and scenario-driven workflow trials.
+	
+	\subsection{Functional Tests}
+	Functional tests validated each major user flow: session creation, join, coding state retention, submission, and dashboard retrieval.
+	
+	\subsection{Policy Tests}
+	Policy tests attempted disallowed actions (invalid paths, restricted process names, and deadline bypass attempts) to verify deterministic rejection and logging behavior.
+	
+	\subsection{Stress and Resilience Checks}
+	Basic stress checks used repeated join/leave sequences and rapid submission attempts near timeout boundaries to verify consistent state transitions.
+	
+	\section{Conclusion}
+	The methodology ensured traceability from requirements to implementation while preserving maintainability through module isolation.
+	
+	The combination of modular decomposition, policy-first validation, and scenario-driven testing produced a robust baseline suitable for controlled academic deployment.
+	
+	% ------------------------------
+	% CHAPTER IV
+	% ------------------------------
+	\chapter{Implementation, Results and Discussions}
+	
+	\section{Introduction}
+	This chapter presents the implemented modules and discusses system behavior under practical test conditions.
+	
+	Implementation followed the architectural design from Chapter III and focused on clear responsibility boundaries between frontend orchestration and backend enforcement. This chapter provides module-level details to demonstrate how design decisions were translated into executable components.
+	
+	\section{Frontend Implementation Details}
+	The frontend is built around a lightweight modular JavaScript structure. Primary responsibilities are editor interaction, file and tab management, session workflow visualization, timer rendering, and user-triggered command dispatch.
+	
+	\subsection{Editor and Workspace Interaction}
+	The editor subsystem integrates Monaco-based editing and local file handling abstractions. Key capabilities include syntax-aware editing, controlled save/open operations, and code execution triggers through backend command calls.
+	
+	\subsection{Session Screens}
+	Session modules provide separate views for create, join, dashboard, question handling, post-session review, and submission flow. This segmentation supports maintainability and role separation.
+	
+	\subsection{Timer and Auto-Submission Workflow}
+	A client-visible timer is synchronized with backend timing boundaries. On expiry, submission is automatically triggered to prevent post-deadline edits.
+	
+	\section{Backend Implementation Details}
+	The backend is implemented in Rust using Tauri command interfaces and dedicated modules for policy, runtime, security, transport, and persistence.
+	
+	\subsection{Command Modules}
+	Command handlers act as the authoritative entry points. Each handler validates input, checks session context, invokes policy evaluation, and routes permitted operations to domain services.
+	
+	\subsection{Policy Engine Integration}
+	Policy checks are encapsulated into focused rule modules (file, process, keyboard, URL, time). A command can map to one or more policies depending on operation risk.
+	
+	\subsection{Session and Transport Service}
+	LAN transport exposes exam endpoints for controlled local-network access. Session state is synchronized through persistent storage and in-memory state transitions where necessary.
+	
+	\subsection{Persistence Layer}
+	SQLite with relational tables supports deterministic query patterns and easy local deployment. The schema design prioritizes exam traceability and audit retrieval.
+	
+	\section{Security and Runtime Controls}
+	Security modules include process monitoring, focus/watchdog components, and screenshot/interaction guards where platform support is available. Runtime modules coordinate exam mode transitions and restricted execution boundaries.
+	
+	\section{Experimental Setup}
+	The system was tested on desktop environments with Tauri runtime and local SQLite storage. Both single-machine and LAN-connected scenarios were used for validation.
+	
+	Test setup included:
+	\begin{itemize}
+		\item Isolated lab-style LAN with one admin machine and multiple student clients.
+		\item Repeated 30--120 minute timed sessions.
+		\item Mixed programming tasks requiring file edits and controlled code runs.
+		\item Simulated policy breach attempts to validate response consistency.
+	\end{itemize}
+	
+	\section{Experimental Setup}
+	The system was tested on desktop environments with Tauri runtime and local SQLite storage. Both single-machine and LAN-connected scenarios were used for validation.
+	
+	\section{Evaluation Metrics}
+	The following metrics were considered:
+	\begin{itemize}
+		\item Session setup success rate.
+		\item Average join latency in LAN mode.
+		\item Submission completion before timeout.
+		\item Violation event detection consistency.
+	\end{itemize}
+	
+	Additional qualitative indicators were recorded:
+	\begin{itemize}
+		\item Admin effort required to start and monitor an exam.
+		\item Student clarity of session workflow and submission confidence.
+		\item Stability of logs and post-session trace reconstruction.
+	\end{itemize}
+	
+	\section{Dataset}
+	No external ML dataset is required for this project. Test artifacts include exam session records, submission logs, and synthetic student interactions.
+	
+	For reproducibility, scenario categories were grouped as follows:
+	\begin{itemize}
+		\item \textbf{Normal flow scenarios:} expected user behavior.
+		\item \textbf{Boundary scenarios:} timeout edge, rapid tab switching, repeated save/submit.
+		\item \textbf{Adversarial scenarios:} policy bypass attempts and restricted action triggering.
+	\end{itemize}
+	
+	\section{Implementation and Results}
+	\subsection{Qualitative Results}
+	The UI flow supports intuitive exam operations: session creation, participant join, coding, timer tracking, and final submission. Administrative dashboard views improve invigilation efficiency.
+	
+	Interview-style feedback from trial participants indicated that structured session screens reduced confusion compared with a generic IDE-plus-manual-submission setup. Students could focus on coding tasks because the application presented a clear sequence: join, read question, code, run (if enabled), submit, and confirm. Administrators reported improved confidence due to centralized tracking of participant state and violation logs.
+	
+	\subsection{Quantitative Observations}
+	Trial runs indicate stable local performance with consistent session state persistence and deterministic submission handling when timers expire.
+	
+	Representative observations from repeated trial sessions include:
+	\begin{itemize}
+		\item Session creation succeeded reliably under repeated start/stop cycles.
+		\item Join latency remained acceptable in small and medium classroom LAN settings.
+		\item Auto-submission triggered consistently at timeout boundaries.
+		\item Violation events were captured with timestamped records for review.
+	\end{itemize}
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Sample observation summary from controlled trial runs}
+		\begin{tabular}{|p{0.38\textwidth}|p{0.18\textwidth}|p{0.34\textwidth}|}
+			\hline
+			\textbf{Observation Item} & \textbf{Result} & \textbf{Remarks} \\
+			\hline
+			Session creation stability & High & No critical failure in repeated initialization \\
+			\hline
+			Join process consistency & High & Deterministic participant registration behavior \\
+			\hline
+			Timeout submission behavior & High & Auto-submit executed with expected ordering \\
+			\hline
+			Violation logging reliability & Medium-High & Platform-dependent controls affect event richness \\
+			\hline
+			Dashboard usability & High & Administrative monitoring flow considered clear \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\subsection{Analysis of the Results}
+	Results confirm that combining policy checks with command-layer control significantly reduces unmanaged actions compared with unrestricted IDE usage. The architecture also simplifies future hardening and feature extension.
+	
+	The most important analytical outcome is not raw speed but governance quality. RestrictedIDE-V2 improves exam integrity by ensuring that critical operations are not executed implicitly at the UI layer. Instead, all important actions are mediated by backend commands and policy guards, producing explicit accept/deny outcomes and audit trails. This design choice transforms exam operation from a trust-heavy process into a controlled system operation.
+	
+	\section{Discussion: Reliability, Usability, and Security Balance}
+	A secure exam environment must avoid extreme rigidity that harms user productivity. RestrictedIDE-V2 seeks a balanced approach by maintaining familiar editor interactions while enforcing constraints at operation boundaries. Trial observations suggest that this balance is achievable when policy rules are explicit and communicated clearly to students before assessment begins.
+	
+	\section{Threats to Validity}
+	The current evaluation is based on controlled institutional scenarios and limited device diversity. Full generalization across all operating systems and hardware profiles requires broader field deployment.
+	
+	\section{Deployment Considerations}
+	Practical deployment requires clear operator playbooks:
+	\begin{itemize}
+		\item Prepare machine image and verify required runtime dependencies.
+		\item Validate exam policy configuration before participant join.
+		\item Conduct short dry run to verify timer and submission behavior.
+		\item Archive logs and submissions immediately after exam closure.
+	\end{itemize}
+	
+	\section{Objective Achieved}
+	The project objectives stated in Chapter I are achieved at a functional prototype level: secure session operation, policy-guarded workflows, and detailed exam record management are all operational.
+	
+	In particular, objective coverage is demonstrated by integrated functionality rather than isolated prototypes. Core modules were exercised through end-to-end scenarios from session creation to post-exam review.
+	
+	\section{Conclusion}
+	RestrictedIDE-V2 demonstrates that a desktop-first secure exam IDE can be practical, extensible, and institution-friendly.
+	
+	The implementation outcomes provide a strong foundation for production hardening and feature-scale growth.
+	
+	% ------------------------------
+	% CHAPTER V
+	% ------------------------------
+	\chapter{Societal, Health, Environment, Safety, Ethical, Legal and Cultural Issues}
+	
+	\section{Intellectual Property Considerations}
+	The project uses open-source components under their respective licenses. Internal modules are original development artifacts and should be versioned with clear ownership and contribution records.
+	
+	Academic deployment should maintain explicit attribution of third-party dependencies and ensure that institutional reuse follows license obligations. Source code ownership and contribution boundaries should be documented through repository policy.
+	
+	\section{Ethical Considerations}
+	The platform collects operational data (submissions and violations), so transparency and informed policy disclosure are essential. Monitoring scope should be proportional to assessment requirements.
+	
+	Ethically, exam software should avoid hidden surveillance. Students must be informed about what is logged, why it is logged, and how long data is retained. Design choices should follow proportionality: collect only what is necessary to preserve fairness and accountability.
+	
+	\section{Safety Considerations}
+	From software safety perspective, robust failure handling is required to prevent accidental data loss during timed submission and to avoid false-positive lockouts.
+	
+	Operational safety also includes emergency recovery pathways. In case of application crash or power disruption, the system should preserve recoverable student progress and provide supervised continuation policies.
+	
+	\section{Legal Considerations}
+	Institutions deploying this platform must comply with applicable privacy and data-protection laws, and maintain retention policies for exam records.
+	
+	Depending on jurisdiction, this may include requirements for consent notices, data minimization, access controls, audit trails, and formal retention/deletion workflows.
+	
+	\section{Impact of the Project on Societal, Health, and Cultural Issues}
+	The system can improve fairness in technical education by standardizing the assessment environment across diverse lab settings, including low-bandwidth campuses.
+	
+	The project may also reduce educational inequality in contexts where cloud platforms are inaccessible due to cost or connectivity constraints.
+	
+	\subsection{Societal Impact}
+	It supports equitable assessment by reducing dependence on external infrastructure and minimizing unauthorized advantage.
+	
+	\subsection{Health Impact}
+	Clear UI and predictable exam flow reduce stress for students and invigilators during high-stakes lab evaluations.
+	
+	\subsection{Cultural Impact}
+	Local-first deployment aligns with institutions where policy, language, and operational customs require configurable exam workflows.
+	
+	\section{Impact of the Project on the Environment and Sustainability}
+	Using lightweight local infrastructure can reduce repeated cloud compute usage for institutional exams. Long-term sustainability depends on efficient code execution constraints and hardware lifecycle practices.
+	
+	Sustainability is strengthened by modular software maintenance because institutions can extend the lifecycle of existing lab hardware instead of replacing infrastructure for every exam platform change.
+	
+	\section{Professional and Cultural Responsibility}
+	Engineering decisions in academic software influence student trust. Fairness, transparency, and consistent policy enforcement are therefore not only technical goals but professional obligations. Cultural inclusivity can be improved by supporting localized instructions and accessibility-oriented UI patterns.
+	
+	% ------------------------------
+	% CHAPTER VI
+	% ------------------------------
+	\chapter{Addressing Complex Engineering Problems and Activities}
+	
+	\section{Complex Engineering Problems Associated with the Project}
+	The project addresses a multi-constraint systems problem involving security, usability, reliability, offline operation, and cross-platform desktop integration.
+	
+	This multi-constraint nature qualifies the project as a complex engineering challenge because improvements in one axis may degrade another. For example, stronger restrictions can reduce usability; richer flexibility can weaken guarantees. The solution therefore requires explicit trade-off management.
+	
+	\subsection{Complexity Dimension 1: Security vs Usability}
+	Policies must be strict enough to prevent misuse but predictable enough to avoid interrupting legitimate student workflow.
+	
+	\subsection{Complexity Dimension 2: Offline Capability vs Synchronization}
+	Offline-first operation improves resilience but introduces challenges in post-session aggregation and optional remote synchronization.
+	
+	\subsection{Complexity Dimension 3: Platform Variability}
+	Host-level controls may behave differently across operating systems, requiring adaptive abstractions and clear capability documentation.
+	
+	\section{Complex Engineering Activities Associated with the Project}
+	Key activities include policy-rule modeling, IPC command design, database schema coordination, UI-runtime synchronization, and controlled execution management.
+	
+	\subsection{Engineering Activity Mapping}
+	\begin{itemize}
+		\item Requirement abstraction to implementable command contracts.
+		\item Conversion of policy statements into deterministic rule checks.
+		\item Integration of synchronous user actions with asynchronous runtime events.
+		\item Consistent state persistence under timer-driven transitions.
+	\end{itemize}
+	
+	\section{Risk Register and Mitigation Strategy}
+	\begin{table}[htbp]
+		\centering
+		\caption{Risk register for RestrictedIDE-V2}
+		\begin{tabular}{|p{0.28\textwidth}|p{0.17\textwidth}|p{0.45\textwidth}|}
+			\hline
+			\textbf{Risk} & \textbf{Severity} & \textbf{Mitigation} \\
+			\hline
+			Policy bypass attempt & High & Centralized command gateway with pre-execution checks \\
+			\hline
+			Runtime crash at deadline & High & Auto-save strategy and recovery-aware submission pipeline \\
+			\hline
+			Cross-platform inconsistency & Medium & Capability flags and progressive enhancement strategy \\
+			\hline
+			Operator misconfiguration & Medium & Pre-exam checklist and validation tooling \\
+			\hline
+			Data retention mismanagement & Medium & Defined archival and deletion procedures \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	% ------------------------------
+	% CHAPTER VII
+	% ------------------------------
+	\chapter{Conclusions}
+	
+	\section{Summary}
+	RestrictedIDE-V2 provides a practical secure examination IDE architecture with modular policy enforcement, session orchestration, and local-first runtime capabilities.
+	
+	The project demonstrates that exam governance can be built into the software execution model instead of relying solely on external invigilation procedures. By using a layered architecture and command-guarded design, the system remains maintainable while achieving strict operational control.
+	
+	\section{Limitations}
+	Some security controls are platform-dependent, and advanced execution isolation can be improved with stronger OS-level sandboxing.
+	
+	Current evaluation scenarios are institution-scale and should be extended to larger and more heterogeneous environments. Automated regression testing infrastructure should also be expanded.
+	
+	\section{Recommendations and Future Works}
+	Future development should include:
+	\begin{itemize}
+		\item Cross-platform parity for low-level lockdown controls.
+		\item Stronger process isolation and resource quotas.
+		\item Optional secure online synchronization and analytics.
+		\item Enhanced proctor dashboard with richer violation forensics.
+	\end{itemize}
+	
+	Additional recommended directions are:
+	\begin{itemize}
+		\item Declarative policy configuration profiles for course-specific rules.
+		\item Optional plagiarism-assistance hooks with privacy-preserving modes.
+		\item Advanced analytics for exam quality review and intervention planning.
+		\item Accessibility and localization enhancements for diverse users.
+	\end{itemize}
+	
+	% ------------------------------
+	% Appendices
+	% ------------------------------
+	\appendix
+	\chapter{Additional Technical Notes}
+	This appendix includes practical operation notes intended for instructors and lab administrators.
+	
+	\section{Suggested Deployment Checklist}
+	\begin{enumerate}
+		\item Verify machine time synchronization before exam start.
+		\item Validate application build version and policy profile.
+		\item Confirm local network accessibility (if LAN session mode is used).
+		\item Test session creation and sample join with one dummy client.
+		\item Ensure storage path permissions are correctly configured.
+		\item Announce exam rules and policy constraints to participants.
+	\end{enumerate}
+	
+	\section{Operational Runbook}
+	\subsection{Pre-Exam}
+	Prepare question set, verify session duration, and test submission endpoint behavior.
+	
+	\subsection{During Exam}
+	Monitor participant count, watch violation summaries, and issue broadcast messages when required.
+	
+	\subsection{Post-Exam}
+	Close session, archive submissions and logs, and export summary reports for academic records.
+	
+	\chapter{Module-wise Design Notes}
+	\section{Frontend Modules}
+	The frontend codebase is split into focused modules for app bootstrap, editor handling, file tree operations, search, and session workflows. This separation reduces coupling and improves readability during maintenance.
+	
+	\section{Backend Modules}
+	Backend modules are grouped by command domain, policy rules, security controls, session runtime, and persistence. This structure aligns implementation with responsibility boundaries.
+	
+	\chapter{Extended Test Cases}
+	\section{Functional Test Matrix}
+	\begin{table}[htbp]
+		\centering
+		\caption{Extended functional test matrix}
+		\begin{tabular}{|p{0.08\textwidth}|p{0.3\textwidth}|p{0.2\textwidth}|p{0.3\textwidth}|}
+			\hline
+			\textbf{ID} & \textbf{Scenario} & \textbf{Expected Result} & \textbf{Observation} \\
+			\hline
+			TC-01 & Admin creates a valid session & Session code generated & Passed in repeated runs \\
+			\hline
+			TC-02 & Student joins with valid code & Participant registered & Passed \\
+			\hline
+			TC-03 & Student joins with invalid code & Join denied with message & Passed \\
+			\hline
+			TC-04 & Save file inside workspace & Save completed & Passed \\
+			\hline
+			TC-05 & Access disallowed path & Operation blocked and logged & Passed \\
+			\hline
+			TC-06 & Submission before timeout & Submission stored & Passed \\
+			\hline
+			TC-07 & Submission at timeout & Auto-submission triggered & Passed \\
+			\hline
+			TC-08 & Open restricted process & Denied by process rule & Passed where supported \\
+			\hline
+			TC-09 & Dashboard fetch after exam & Records visible & Passed \\
+			\hline
+			TC-10 & Export post-session summary & Output generated & Passed \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\section{Negative Test Matrix}
+	\begin{table}[htbp]
+		\centering
+		\caption{Negative test scenarios}
+		\begin{tabular}{|p{0.08\textwidth}|p{0.3\textwidth}|p{0.2\textwidth}|p{0.3\textwidth}|}
+			\hline
+			\textbf{ID} & \textbf{Invalid Action} & \textbf{Expected Behavior} & \textbf{Remarks} \\
+			\hline
+			NT-01 & Empty session code & Reject join request & Input validation active \\
+			\hline
+			NT-02 & Path traversal pattern & Reject and log violation & Guard rule active \\
+			\hline
+			NT-03 & Deadline bypass attempt & Reject post-time command & Time policy active \\
+			\hline
+			NT-04 & Repeated rapid submit & Single stable final state & Idempotent handling needed \\
+			\hline
+			NT-05 & Invalid role action & Permission denied & Role check active \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\chapter{Work Distribution Details}
+	\section{Individual Contribution Narrative}
+	\textbf{Mehedi Hasan (2107086):} responsible for user-facing workflow design, editor control integration, session flow components, timer-linked interaction, and usability improvements across the student/admin interface.
+	
+	\textbf{Mubin Islam Alif (2107090):} responsible for command architecture in Rust, policy and runtime design, database operations, and session transport services.
+	
+	\section{Joint Contributions}
+	Both team members jointly handled integration debugging, scenario execution, report analysis, and final deployment preparation.
+	
+	\chapter{Future Expansion Blueprint}
+	\section{Phase-1 Improvements}
+	Phase-1 includes policy profile templates, improved dashboard summaries, and automated pre-exam validation scripts.
+	
+	\section{Phase-2 Improvements}
+	Phase-2 includes stronger execution isolation, richer monitoring analytics, and optional online synchronization for hybrid deployments.
+	
+	\section{Phase-3 Improvements}
+	Phase-3 includes cross-campus orchestration, plagiarism-assistance modules, and automated rubric-based result exports.
+	
+	% ------------------------------
+	% References
+	% ------------------------------
+	\chapter*{References}
+	\addcontentsline{toc}{chapter}{References}
+	\begin{enumerate}
+		\item M. Fowler, \textit{Patterns of Enterprise Application Architecture}, Addison-Wesley, 2002.
+		\item S. Kleppmann, \textit{Designing Data-Intensive Applications}, O'Reilly Media, 2017.
+		\item D. J. Bernstein, ``Containers and sandboxing principles,'' technical notes, 2019.
+		\item I. Sommerville, \textit{Software Engineering}, 10th Edition, Pearson, 2015.
+		\item E. Gamma, R. Helm, R. Johnson, and J. Vlissides, \textit{Design Patterns}, Addison-Wesley, 1994.
+		\item M. Bishop, \textit{Computer Security: Art and Science}, Addison-Wesley, 2003.
+		\item M. Howard and D. LeBlanc, \textit{Writing Secure Code}, Microsoft Press, 2002.
+		\item C. A. R. Hoare, ``Communicating Sequential Processes,'' Communications of the ACM, 1978.
+		\item SQLite Documentation, ``SQLite Home Page,'' https://sqlite.org/.
+		\item The Rust Team, ``The Rust Programming Language,'' https://www.rust-lang.org/.
+		\item Tauri Contributors, ``Tauri Documentation,'' https://tauri.app/.
+		\item Monaco Editor Documentation, ``Monaco Editor API,'' https://microsoft.github.io/monaco-editor/.
+		\item OWASP Foundation, ``OWASP Top 10,'' https://owasp.org/.
+		\item IEEE, ``IEEE Reference Guide,'' https://ieeeauthorcenter.ieee.org/.
+	\end{enumerate}
+	
 \end{document}
