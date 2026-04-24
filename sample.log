@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2026.4.24)  24 APR 2026 04:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2026.4.24)  24 APR 2026 17:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -139,26 +139,37 @@ LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
 )
 (/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/latex
+/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/latex
+/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/latex
 /l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count296
 ) (sample.aux)
 \openout1 = `sample.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
 
 (/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/conte
 xt/base/mkii/supp-pdf.mkii
@@ -178,50 +189,8 @@ xt/base/mkii/supp-pdf.mkii
 (/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/latex
 /epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/gener
-ic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-(/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/latex
-/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-
-(/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/gener
-ic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-))
-(/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/latex
-/kvoptions/kvoptions.sty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-
-(/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/gener
-ic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-)
-(/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/latex
-/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-))
-(/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/gener
-ic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/gener
-ic/iftex/iftex.sty
-Package: iftex 2024/12/12 v1.0g TeX engine tests
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/tex/latex
 /00miktex/epstopdf-sys.cfg
@@ -236,15 +205,39 @@ ftex/pdftex.map}]
 [2]
 
 [1]
-Overfull \hbox (10.88983pt too wide) in paragraph at lines 87--88
-\OT1/cmr/m/n/12 supervisor, \OT1/cmr/bx/n/12 Mr. Xyz\OT1/cmr/m/n/12 , for his c
-ontinuous support, valuable suggestions, and constructive
+Overfull \hbox (8.56708pt too wide) in paragraph at lines 90--91
+\OT1/cmr/m/n/12 which creates challenges for institutions that require strict i
+nvigilation, offline operation,
  []
 
 
-Overfull \hbox (11.72261pt too wide) in paragraph at lines 89--90
-\OT1/cmr/m/n/12 Khulna University of Engineering & Technology, for providing th
-e academic environment
+Overfull \hbox (3.47751pt too wide) in paragraph at lines 92--93
+[]\OT1/cmr/m/n/12 The system uses a modular architecture with a JavaScript-base
+d editor interface
+ []
+
+
+Overfull \hbox (30.50018pt too wide) in paragraph at lines 92--93
+\OT1/cmr/m/n/12 and join workflows, timed assessments, controlled code executio
+n, role-based administration,
+ []
+
+
+Overfull \hbox (14.21767pt too wide) in paragraph at lines 96--97
+[]\OT1/cmr/m/n/12 This report documents the full project lifecycle in detail: r
+equirement engineering,
+ []
+
+
+Overfull \hbox (35.72235pt too wide) in paragraph at lines 96--97
+\OT1/cmr/m/n/12 architectural decomposition, policy design, implementation stra
+tegy, validation methodology,
+ []
+
+
+Overfull \hbox (13.65869pt too wide) in paragraph at lines 96--97
+\OT1/cmr/m/n/12 report includes module-level explanations, operational workflow
+s, simulated performance
  []
 
 
@@ -252,68 +245,34 @@ e academic environment
 [1
 
 ]
-Overfull \hbox (8.56708pt too wide) in paragraph at lines 101--102
-\OT1/cmr/m/n/12 which creates challenges for institutions that require strict i
-nvigilation, offline operation,
- []
-
-
-Overfull \hbox (3.47751pt too wide) in paragraph at lines 103--104
-[]\OT1/cmr/m/n/12 The system uses a modular architecture with a JavaScript-base
-d editor interface
- []
-
-
-Overfull \hbox (30.50018pt too wide) in paragraph at lines 103--104
-\OT1/cmr/m/n/12 and join workflows, timed assessments, controlled code executio
-n, role-based administration,
- []
-
-
-Overfull \hbox (14.21767pt too wide) in paragraph at lines 107--108
-[]\OT1/cmr/m/n/12 This report documents the full project lifecycle in detail: r
-equirement engineering,
- []
-
-
-Overfull \hbox (35.72235pt too wide) in paragraph at lines 107--108
-\OT1/cmr/m/n/12 architectural decomposition, policy design, implementation stra
-tegy, validation methodology,
- []
-
-
-Overfull \hbox (13.65869pt too wide) in paragraph at lines 107--108
-\OT1/cmr/m/n/12 report includes module-level explanations, operational workflow
-s, simulated performance
+Overfull \hbox (7.44359pt too wide) in paragraph at lines 98--99
+\OT1/cmr/m/n/12 Rust/Tauri desktop architecture, offline LAN assessment, sessio
+n lifecycle management,
  []
 
 
 
-[2
+[2] (sample.toc
+
+[3
 
 ]
 
-[3] (sample.toc
+[4]
 
-[4
-
-]
-
-[5]
-
-[6])
+[5])
 \tf@toc=\write3
 \openout3 = `sample.toc'.
 
 
 
-[7] (sample.lot)
+[6] (sample.lot)
 \tf@lot=\write4
 \openout4 = `sample.lot'.
 
 
 
-[8
+[7
 
 ] (sample.lof)
 \tf@lof=\write5
@@ -321,24 +280,24 @@ s, simulated performance
 
 
 
-[9
+[8
 
 ]
 Chapter 1.
 
-Overfull \hbox (14.14822pt too wide) in paragraph at lines 127--128
+Overfull \hbox (14.14822pt too wide) in paragraph at lines 118--119
 []\OT1/cmr/m/n/12 In many educational contexts, the practical challenge is not 
 whether programming
  []
 
 
-Overfull \hbox (6.2171pt too wide) in paragraph at lines 127--128
+Overfull \hbox (6.2171pt too wide) in paragraph at lines 118--119
 \OT1/cmr/m/n/12 concerns, yet they may fail when internet connectivity is unsta
 ble or when organizations
  []
 
 
-Overfull \hbox (32.18695pt too wide) in paragraph at lines 129--130
+Overfull \hbox (32.18695pt too wide) in paragraph at lines 120--121
 []\OT1/cmr/m/n/12 RestrictedIDE-V2 addresses this operational gap by unifying t
 he coding environment,
  []
@@ -349,13 +308,25 @@ he coding environment,
 
 
 ]
-Overfull \hbox (6.27821pt too wide) in paragraph at lines 132--133
+Overfull \hbox (15.16006pt too wide) in paragraph at lines 122--123
+\OT1/cmr/m/n/12 standardized environment ensures that performance is measured p
+rimarily by algorithmic
+ []
+
+
+Overfull \hbox (14.79016pt too wide) in paragraph at lines 122--123
+\OT1/cmr/m/n/12 reasoning, coding quality, and problem-solving skill. Therefore
+, the software environment
+ []
+
+
+Overfull \hbox (6.27821pt too wide) in paragraph at lines 125--126
 \OT1/cmr/m/n/12 Institutions that run programming exams often face the followin
 g operational problems: 
  []
 
 
-Overfull \hbox (19.91566pt too wide) in paragraph at lines 141--142
+Overfull \hbox (19.91566pt too wide) in paragraph at lines 134--135
 \OT1/cmr/m/n/12 across UI behavior, file operations, process lifecycle, timing 
 semantics, and communication
  []
@@ -363,244 +334,278 @@ semantics, and communication
 
 
 [2]
-Overfull \hbox (12.18991pt too wide) in paragraph at lines 155--156
+
+LaTeX Warning: Citation `sommerville' on page 3 undefined on input line 138.
+
+
+LaTeX Warning: Citation `securecode' on page 3 undefined on input line 138.
+
+
+Overfull \hbox (7.56577pt too wide) in paragraph at lines 138--139
+\OT1/cmr/m/n/12 software engineering and secure coding principles discussed in 
+foundational literature [\OT1/cmr/bx/n/12 ?\OT1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (5.0136pt too wide) in paragraph at lines 140--141
+[]\OT1/cmr/m/n/12 To answer this, the work adopts a systems-engineering lens wh
+ere exam integrity
+ []
+
+
+Overfull \hbox (1.90881pt too wide) in paragraph at lines 140--141
+\OT1/cmr/m/n/12 deterministic timing, bounded execution, controlled storage acc
+ess, and comprehensive
+ []
+
+
+Overfull \hbox (12.18991pt too wide) in paragraph at lines 152--153
 []\OT1/cmr/m/n/12 In addition to these primary objectives, the project also pur
 sues several secondary
  []
 
 
-Overfull \hbox (2.10464pt too wide) in paragraph at lines 164--165
-\OT1/cmr/m/n/12 The project covers frontend editor integration, backend command
- orchestration, policy
- []
-
-
-Overfull \hbox (2.75742pt too wide) in paragraph at lines 164--165
-\OT1/cmr/m/n/12 cloud synchronization and cross-platform parity for all low-lev
-el controls are considered
- []
-
-
-Overfull \hbox (14.93571pt too wide) in paragraph at lines 166--167
-[]\OT1/cmr/m/n/12 The scope intentionally excludes advanced plagiarism detectio
-n engines, biometric
- []
-
-
-Overfull \hbox (8.89346pt too wide) in paragraph at lines 166--167
-\OT1/cmr/m/n/12 scope, the team prioritized architecture stability, predictable
- operation, and incremental
- []
-
-
-Overfull \hbox (32.33224pt too wide) in paragraph at lines 169--170
-\OT1/cmr/m/n/12 Unlike generic IDE wrappers, RestrictedIDE-V2 combines assessme
-nt workflow management
+Overfull \hbox (3.65834pt too wide) in paragraph at lines 160--161
+\OT1/cmr/m/n/12 demonstration prototype but a practically deployable academic s
+ystem. Each objective
  []
 
 
 
 [3]
-Overfull \hbox (13.45242pt too wide) in paragraph at lines 171--172
+Overfull \hbox (2.10464pt too wide) in paragraph at lines 163--164
+\OT1/cmr/m/n/12 The project covers frontend editor integration, backend command
+ orchestration, policy
+ []
+
+
+Overfull \hbox (2.75742pt too wide) in paragraph at lines 163--164
+\OT1/cmr/m/n/12 cloud synchronization and cross-platform parity for all low-lev
+el controls are considered
+ []
+
+
+Overfull \hbox (14.93571pt too wide) in paragraph at lines 165--166
+[]\OT1/cmr/m/n/12 The scope intentionally excludes advanced plagiarism detectio
+n engines, biometric
+ []
+
+
+Overfull \hbox (8.89346pt too wide) in paragraph at lines 165--166
+\OT1/cmr/m/n/12 scope, the team prioritized architecture stability, predictable
+ operation, and incremental
+ []
+
+
+Overfull \hbox (32.33224pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/12 Unlike generic IDE wrappers, RestrictedIDE-V2 combines assessme
+nt workflow management
+ []
+
+
+Overfull \hbox (13.45242pt too wide) in paragraph at lines 170--171
 []\OT1/cmr/m/n/12 The specific novelty of RestrictedIDE-V2 may be summarized in
  three engineering
  []
 
 
-Overfull \hbox (2.49011pt too wide) in paragraph at lines 184--185
+
+[4]
+Overfull \hbox (2.49011pt too wide) in paragraph at lines 183--184
 []\OT1/cmr/bx/n/12 Milestone 2: \OT1/cmr/m/n/12 architecture blueprint, data mo
 del design, and command interface
  []
 
 
-Overfull \hbox (19.52744pt too wide) in paragraph at lines 185--186
+Overfull \hbox (19.52744pt too wide) in paragraph at lines 184--185
 []\OT1/cmr/bx/n/12 Milestone 3: \OT1/cmr/m/n/12 frontend-backend implementation
  of minimum viable exam workflow. 
  []
 
 
-Overfull \hbox (16.1983pt too wide) in paragraph at lines 187--188
+Overfull \hbox (16.1983pt too wide) in paragraph at lines 186--187
 []\OT1/cmr/bx/n/12 Milestone 5: \OT1/cmr/m/n/12 documentation, report writing, 
 and final demonstration preparation. 
  []
 
 
-
-[4]
-Overfull \hbox (32.69702pt too wide) in paragraph at lines 191--194
-\OT1/cmr/m/n/12 session interfaces, and user workflow optimization. Responsibil
-ities included UI composition,
+Overfull \hbox (14.70313pt too wide) in paragraph at lines 194--195
+\OT1/cmr/m/n/12 including interactive form flow, status transitions, and timer-
+linked visual feedback. 
  []
 
 
-Overfull \hbox (37.55011pt too wide) in paragraph at lines 191--194
-\OT1/cmr/m/n/12 policy/runtime architecture, secure execution controls, and per
-sistence/transport integration.
+
+[5]
+Overfull \hbox (1.83939pt too wide) in paragraph at lines 201--202
+[]\OT1/cmr/m/n/12 Led the Rust backend architecture for command handling, polic
+y-first validation,
  []
 
 
-Overfull \hbox (1.54771pt too wide) in paragraph at lines 191--194
-\OT1/cmr/m/n/12 Responsibilities included backend command orchestration, databa
-se operations, policy
+Overfull \hbox (13.03648pt too wide) in paragraph at lines 205--206
+[]\OT1/cmr/m/n/12 Drove foundational backend modules used for persistence and t
+ransport integration
  []
 
 
-Overfull \hbox (13.1227pt too wide) in paragraph at lines 191--194
-\OT1/cmr/m/n/12 rule wiring, and LAN session service handling. Both members col
-laborated on integration
+
+[6]
+Overfull \hbox (0.6706pt too wide) in paragraph at lines 215--216
+[]\OT1/cmr/m/n/12 Both members jointly completed integration testing, debugging
+, scenario-based
  []
 
 
-Overfull \hbox (10.32956pt too wide) in paragraph at lines 191--194
-\OT1/cmr/m/n/12 testing, error tracing, deployment scripts, report preparation,
- and presentation artifacts. 
- []
-
-
-Overfull \hbox (21.29611pt too wide) in paragraph at lines 196--197
+Overfull \hbox (21.29611pt too wide) in paragraph at lines 218--219
 \OT1/cmr/m/n/12 controlled labs, recruitment coding tests within intranet-only 
 environments, and classroom
  []
 
 
 
-[5]
-
-[6]
+[7]
 Chapter 2.
 
-Overfull \hbox (1.6728pt too wide) in paragraph at lines 211--212
+Overfull \hbox (1.6728pt too wide) in paragraph at lines 233--234
 \OT1/cmr/m/n/12 Secure coding assessments are commonly delivered through cloud 
 judges, LMS plugins,
  []
 
 
-Overfull \hbox (33.69876pt too wide) in paragraph at lines 214--215
+Overfull \hbox (33.69876pt too wide) in paragraph at lines 236--237
 \OT1/cmr/m/n/12 evaluation pipelines but depend on internet connectivity and re
 mote sandbox infrastructures.
  []
 
 
-Overfull \hbox (25.52277pt too wide) in paragraph at lines 219--220
+Overfull \hbox (25.52277pt too wide) in paragraph at lines 241--242
 []\OT1/cmr/bx/n/12 Secure browser ecosystems: \OT1/cmr/m/n/12 controlled exam i
 nterfaces for web-based assessments
  []
 
 
 
-[7
+[8
 
 ]
-Overfull \hbox (20.85725pt too wide) in paragraph at lines 227--228
+Overfull \hbox (3.77641pt too wide) in paragraph at lines 248--249
+\OT1/cmr/m/n/12 confuses users during high-stakes exams. RestrictedIDE-V2 empha
+sizes explicit policy-
+ []
+
+
+LaTeX Warning: Citation `rbac' on page 9 undefined on input line 250.
+
+
+Overfull \hbox (20.85725pt too wide) in paragraph at lines 253--254
 \OT1/cmr/m/n/12 Table 2.1[] summarizes the relative position of RestrictedIDE-V
 2 with common alternatives. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
 []\OT1/cmr/bx/n/12 Relevance to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
 \OT1/cmr/bx/n/12 RestrictedIDE-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
+Underfull \hbox (badness 10000) in paragraph at lines 262--262
 []\OT1/cmr/m/n/12 Cloud online
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
+Underfull \hbox (badness 10000) in paragraph at lines 262--262
 []\OT1/cmr/m/n/12 Automatic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
+Underfull \hbox (badness 10000) in paragraph at lines 262--262
 \OT1/cmr/m/n/12 evaluation at
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
+Underfull \hbox (badness 10000) in paragraph at lines 262--262
 []\OT1/cmr/m/n/12 Internet
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
+Underfull \hbox (badness 10000) in paragraph at lines 262--262
 \OT1/cmr/m/n/12 dependency,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--239
+Underfull \hbox (badness 10000) in paragraph at lines 264--264
 []\OT1/cmr/m/n/12 Lockdown
  []
 
 
-Underfull \hbox (badness 4752) in paragraph at lines 239--239
+Underfull \hbox (badness 4752) in paragraph at lines 264--264
 []\OT1/cmr/m/n/12 Not IDE-native
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
+Underfull \hbox (badness 10000) in paragraph at lines 266--266
 []\OT1/cmr/m/n/12 Generic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
+Underfull \hbox (badness 10000) in paragraph at lines 266--266
 []\OT1/cmr/m/n/12 Excellent coding
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
+Underfull \hbox (badness 10000) in paragraph at lines 266--266
 []\OT1/cmr/m/n/12 Minimal exam
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 []\OT1/cmr/m/n/12 Baseline usability
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 []\OT1/cmr/m/n/12 RestrictedIDE-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 []\OT1/cmr/m/n/12 Offline-first,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 \OT1/cmr/m/n/12 policy-aware,
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 243--243
+Underfull \hbox (badness 5403) in paragraph at lines 268--268
 []\OT1/cmr/m/n/12 Some platform-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 \OT1/cmr/m/n/12 dependent
  []
 
 
-Underfull \hbox (badness 3000) in paragraph at lines 243--244
+Underfull \hbox (badness 3000) in paragraph at lines 268--269
 []\OT1/cmr/m/n/12 Balanced solution for
  []
 
 
-
-[8]
-Overfull \hbox (11.24344pt too wide) in paragraph at lines 251--252
+Overfull \hbox (11.24344pt too wide) in paragraph at lines 276--277
 \OT1/cmr/m/n/12 greater autonomy, infrastructure predictability, and direct pol
 icy governance for physical
  []
 
 
-Overfull \hbox (17.00958pt too wide) in paragraph at lines 251--252
+Overfull \hbox (17.00958pt too wide) in paragraph at lines 276--277
 \OT1/cmr/m/n/12 lab examinations. This positioning is aligned with the needs id
 entified during requirement
  []
@@ -608,279 +613,259 @@ entified during requirement
 
 
 [9]
+
+[10]
+Overfull \hbox (12.02881pt too wide) in paragraph at lines 278--279
+[]\OT1/cmr/m/n/12 From an adoption perspective, this middle-ground approach can
+ reduce migration
+ []
+
+
+
+[11]
 Chapter 3.
 
-Overfull \hbox (34.56961pt too wide) in paragraph at lines 259--260
+Overfull \hbox (34.56961pt too wide) in paragraph at lines 286--287
 \OT1/cmr/m/n/12 This chapter explains the engineering approach used to design a
 nd implement RestrictedIDE-
  []
 
 
 
-[10
+[12
 
 ]
-Overfull \hbox (0.82086pt too wide) in paragraph at lines 289--290
+Overfull \hbox (0.82086pt too wide) in paragraph at lines 318--319
 \OT1/cmr/m/n/12 through direct command execution. These threat vectors directly
  influenced command
  []
 
 
+Overfull \hbox (3.83444pt too wide) in paragraph at lines 320--321
+[]\OT1/cmr/m/n/12 In design workshops, each threat vector was mapped to one or 
+more enforcement
+ []
 
-[11]
-Overfull \hbox (33.66405pt too wide) in paragraph at lines 319--320
+
+
+[13]
+Overfull \hbox (33.66405pt too wide) in paragraph at lines 350--351
 []\OT1/cmr/m/n/12 Resolve contextual metadata (user role, session state, path/p
 rocess target, timestamp). 
  []
 
 
-Underfull \hbox (badness 2735) in paragraph at lines 338--339
+Underfull \hbox (badness 2735) in paragraph at lines 369--370
 []\OT1/cmr/m/n/12 Ensure student operations remain within allowed
  []
 
 
-Underfull \hbox (badness 2261) in paragraph at lines 340--341
+Underfull \hbox (badness 2261) in paragraph at lines 371--372
 []\OT1/cmr/m/n/12 Enforce session duration and submission deadline
  []
 
 
-Overfull \hbox (2.88829pt too wide) in paragraph at lines 344--344
+Overfull \hbox (2.88829pt too wide) in paragraph at lines 375--375
 []\OT1/cmr/m/n/12 Keyboard/interaction
  []
 
 
-Underfull \hbox (badness 1348) in paragraph at lines 344--345
+Underfull \hbox (badness 1348) in paragraph at lines 375--376
 []\OT1/cmr/m/n/12 Restrict unsafe key combinations during lockdown
  []
 
 
-Underfull \hbox (badness 1248) in paragraph at lines 346--347
+Underfull \hbox (badness 1248) in paragraph at lines 377--378
 []\OT1/cmr/m/n/12 Prevent unauthorized external access during exam
  []
 
 
-Overfull \hbox (3.02965pt too wide) in paragraph at lines 355--356
+
+[14]
+Overfull \hbox (3.02965pt too wide) in paragraph at lines 386--387
 []\OT1/cmr/bx/n/12 Client Workflow Layer: \OT1/cmr/m/n/12 state transitions, ti
 mer handling, submission triggers. 
  []
 
 
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 []\OT1/cmr/m/n/12 Final answer snapshot and
  []
 
 
-Overfull \hbox (13.59341pt too wide) in paragraph at lines 394--395
+Overfull \hbox (13.59341pt too wide) in paragraph at lines 425--426
 \OT1/cmr/m/n/12 Testing combined unit-level verification, command-level integra
 tion checks, and scenario-
  []
 
 
 
-[13]
-
-[14]
-Overfull \hbox (8.93022pt too wide) in paragraph at lines 408--409
+[16]
+Overfull \hbox (8.93022pt too wide) in paragraph at lines 441--442
 []\OT1/cmr/m/n/12 The combination of modular decomposition, policy-first valida
 tion, and scenario-
  []
 
 
 
-[15]
+[17]
 Chapter 4.
 
-Overfull \hbox (27.82382pt too wide) in paragraph at lines 418--419
+Overfull \hbox (27.82382pt too wide) in paragraph at lines 451--452
 \OT1/cmr/m/n/12 on clear responsibility boundaries between frontend orchestrati
 on and backend enforcement.
  []
 
 
-Overfull \hbox (21.16139pt too wide) in paragraph at lines 424--425
+
+[18
+
+]
+Overfull \hbox (21.16139pt too wide) in paragraph at lines 459--460
 \OT1/cmr/m/n/12 The editor subsystem integrates Monaco-based editing and local 
 file handling abstractions.
  []
 
 
+Overfull \hbox (17.21495pt too wide) in paragraph at lines 461--462
+[]\OT1/cmr/m/n/12 A notable design choice is separating editing convenience fro
+m execution authority.
+ []
 
-[16
 
-]
-Overfull \hbox (9.87262pt too wide) in paragraph at lines 436--437
+Overfull \hbox (1.25604pt too wide) in paragraph at lines 472--473
+\OT1/cmr/m/n/12 behavior is crucial, language-level safety contributes directly
+ to operational confidence. 
+ []
+
+
+LaTeX Warning: Citation `tauri' on page 19 undefined on input line 474.
+
+
+LaTeX Warning: Citation `rust' on page 19 undefined on input line 474.
+
+
+LaTeX Warning: Citation `monaco' on page 19 undefined on input line 474.
+
+
+LaTeX Warning: Citation `sqlite' on page 19 undefined on input line 474.
+
+
+Overfull \hbox (9.87262pt too wide) in paragraph at lines 477--478
 \OT1/cmr/m/n/12 input, checks session context, invokes policy evaluation, and r
 outes permitted operations
  []
 
 
 
-[17]
-Overfull \hbox (82.06909pt too wide) in paragraph at lines 448--449
+[19]
+Overfull \hbox (82.06909pt too wide) in paragraph at lines 489--490
 \OT1/cmr/m/n/12 Security modules include process monitoring, focus/watchdog com
 ponents, and screenshot/interaction
  []
 
 
 
-[18]
-Overfull \hbox (4.967pt too wide) in paragraph at lines 486--487
+[20]
+
+[21]
+Overfull \hbox (4.967pt too wide) in paragraph at lines 526--527
 []\OT1/cmr/bx/n/12 Boundary scenarios: \OT1/cmr/m/n/12 timeout edge, rapid tab 
 switching, repeated save/submit. 
  []
 
 
-Overfull \hbox (5.23099pt too wide) in paragraph at lines 487--488
+Overfull \hbox (5.23099pt too wide) in paragraph at lines 527--528
 []\OT1/cmr/bx/n/12 Adversarial scenarios: \OT1/cmr/m/n/12 policy bypass attempt
 s and restricted action triggering. 
  []
 
 
-Overfull \hbox (0.29448pt too wide) in paragraph at lines 492--493
+Overfull \hbox (0.29448pt too wide) in paragraph at lines 532--533
 \OT1/cmr/m/n/12 coding, timer tracking, and final submission. Administrative da
 shboard views improve
  []
 
 
-
-[19]
-Overfull \hbox (5.6622pt too wide) in paragraph at lines 494--495
+Overfull \hbox (5.6622pt too wide) in paragraph at lines 534--535
 []\OT1/cmr/m/n/12 Interview-style feedback from trial participants indicated th
 at structured session
  []
 
 
-Overfull \hbox (3.27132pt too wide) in paragraph at lines 494--495
+Overfull \hbox (3.27132pt too wide) in paragraph at lines 534--535
 \OT1/cmr/m/n/12 screens reduced confusion compared with a generic IDE-plus-manu
 al-submission setup.
  []
 
 
-Overfull \hbox (7.45737pt too wide) in paragraph at lines 494--495
+Overfull \hbox (7.45737pt too wide) in paragraph at lines 534--535
 \OT1/cmr/m/n/12 Students could focus on coding tasks because the application pr
 esented a clear sequence:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--517
+Overfull \hbox (10.59271pt too wide) in paragraph at lines 536--537
+[]\OT1/cmr/m/n/12 Faculty observers noted that the dashboard-style monitoring r
+educed dependence
+ []
+
+
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 558--559
 []\OT1/cmr/m/n/12 Deterministic participant
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 522--523
+Underfull \hbox (badness 10000) in paragraph at lines 564--565
 []\OT1/cmr/m/n/12 Administrative monitoring
  []
 
 
-Overfull \hbox (0.89494pt too wide) in paragraph at lines 528--529
+Overfull \hbox (0.89494pt too wide) in paragraph at lines 570--571
 \OT1/cmr/m/n/12 Results confirm that combining policy checks with command-layer
  control significantly
  []
 
 
-Overfull \hbox (3.71114pt too wide) in paragraph at lines 530--531
+Overfull \hbox (3.71114pt too wide) in paragraph at lines 572--573
 \OT1/cmr/m/n/12 quality. RestrictedIDE-V2 improves exam integrity by ensuring t
 hat critical operations
  []
 
 
 
-[20]
-Overfull \hbox (8.40579pt too wide) in paragraph at lines 532--532
-[]\OT1/cmr/bx/n/17.28 Discussion: Reliability, Usability, and Security
+[23]
+Overfull \hbox (12.5163pt too wide) in paragraph at lines 574--575
+[]\OT1/cmr/m/n/12 Additionally, the modular decomposition makes quality improve
+ment cumulative.
  []
 
 
-Overfull \hbox (8.38933pt too wide) in paragraph at lines 533--534
+Overfull \hbox (8.38933pt too wide) in paragraph at lines 577--578
 \OT1/cmr/m/n/12 RestrictedIDE-V2 seeks a balanced approach by maintaining famil
 iar editor interactions
  []
 
 
 
-[21]
-Overfull \hbox (1.0034pt too wide) in paragraph at lines 553--554
+[24]
+Overfull \hbox (1.0034pt too wide) in paragraph at lines 597--598
 \OT1/cmr/m/n/12 RestrictedIDE-V2 demonstrates that a desktop-first secure exam 
 IDE can be practical,
  []
 
 
 
-[22]
+[25]
 Chapter 5.
 
-Overfull \hbox (8.30597pt too wide) in paragraph at lines 563--564
-\OT1/cmr/m/n/12 modules are original development artifacts and should be versio
-ned with clear ownership
- []
-
-
-Overfull \hbox (38.03964pt too wide) in paragraph at lines 565--566
-[]\OT1/cmr/m/n/12 Academic deployment should maintain explicit attribution of t
-hird-party dependencies
- []
-
-
-
-[23
-
-]
-Overfull \hbox (14.27675pt too wide) in paragraph at lines 573--574
-\OT1/cmr/m/n/12 From software safety perspective, robust failure handling is re
-quired to prevent accidental
- []
-
-
-Overfull \hbox (12.02676pt too wide) in paragraph at lines 580--581
-\OT1/cmr/m/n/12 data minimization, access controls, audit trails, and formal re
-tention/deletion workflows. 
- []
-
-
-Overfull \hbox (5.30322pt too wide) in paragraph at lines 583--584
-\OT1/cmr/m/n/12 The system can improve fairness in technical education by stand
-ardizing the assessment
- []
-
-
-
-[24]
-Overfull \hbox (0.11162pt too wide) in paragraph at lines 594--595
-\OT1/cmr/m/n/12 Local-first deployment aligns with institutions where policy, l
-anguage, and operational
- []
-
-
-Overfull \hbox (27.27309pt too wide) in paragraph at lines 599--600
-[]\OT1/cmr/m/n/12 Sustainability is strengthened by modular software maintenanc
-e because institutions
- []
-
-
-Overfull \hbox (22.03177pt too wide) in paragraph at lines 602--603
-\OT1/cmr/m/n/12 Engineering decisions in academic software influence student tr
-ust. Fairness, transparency,
- []
-
-
-Overfull \hbox (5.69489pt too wide) in paragraph at lines 602--603
-\OT1/cmr/m/n/12 and consistent policy enforcement are therefore not only techni
-cal goals but professional
- []
-
-
-
-[25]
-Chapter 6.
-
-Overfull \hbox (12.9838pt too wide) in paragraph at lines 609--609
-[]\OT1/cmr/bx/n/17.28 Complex Engineering Problems Associated with
- []
-
-
-Overfull \hbox (57.5593pt too wide) in paragraph at lines 617--617
-[]\OT1/cmr/bx/n/14.4 Complexity Dimension 2: Offline Capability vs Synchronizat
-ion 
+Overfull \hbox (16.4656pt too wide) in paragraph at lines 609--610
+\OT1/cmr/m/n/12 that input validation, authorization checks, and audit logging 
+happen in one deterministic
  []
 
 
@@ -888,61 +873,63 @@ ion
 [26
 
 ]
-Overfull \hbox (1.83937pt too wide) in paragraph at lines 621--622
-\OT1/cmr/m/n/12 Host-level controls may behave differently across operating sys
-tems, requiring adaptive
+Overfull \hbox (6.84135pt too wide) in paragraph at lines 614--615
+[]\OT1/cmr/m/n/12 To reduce attack surface, the design follows explicit allow/d
+eny policy semantics,
  []
 
 
-Overfull \hbox (14.5438pt too wide) in paragraph at lines 623--623
-[]\OT1/cmr/bx/n/17.28 Complex Engineering Activities Associated with
+Overfull \hbox (15.16006pt too wide) in paragraph at lines 614--615
+\OT1/cmr/m/n/12 bounded path checks, role-sensitive command behavior, and time-
+based state constraints.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 644--644
-[]\OT1/cmr/m/n/12 Runtime crash at
+Overfull \hbox (3.03482pt too wide) in paragraph at lines 622--623
+\OT1/cmr/m/n/12 prioritizes deterministic state transitions at deadline boundar
+ies. A practical reliability
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 646--646
-[]\OT1/cmr/m/n/12 Cross-platform
+Overfull \hbox (5.99275pt too wide) in paragraph at lines 624--625
+[]\OT1/cmr/m/n/12 Operational resilience also depends on predictable recovery s
+teps for invigilators.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 646--647
-[]\OT1/cmr/m/n/12 Capability flags and progressive
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 648--648
-[]\OT1/cmr/m/n/12 Operator
- []
-
-
-Underfull \hbox (badness 4954) in paragraph at lines 648--649
-[]\OT1/cmr/m/n/12 Pre-exam checklist and validation
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 650--650
-[]\OT1/cmr/m/n/12 Data retention
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 650--651
-[]\OT1/cmr/m/n/12 Defined archival and deletion
+Overfull \hbox (44.26819pt too wide) in paragraph at lines 627--628
+\OT1/cmr/m/n/12 A technical system report must address governance requirements 
+in addition to implementation
  []
 
 
 
 [27]
 
-[28]
-Chapter 7.
+LaTeX Warning: Citation `owasp' on page 28 undefined on input line 631.
 
-Overfull \hbox (19.68178pt too wide) in paragraph at lines 668--669
-\OT1/cmr/m/n/12 larger and more heterogeneous environments. Automated regressio
-n testing infrastructure
+
+LaTeX Warning: Citation `bishop' on page 28 undefined on input line 631.
+
+
+Overfull \hbox (3.73657pt too wide) in paragraph at lines 634--635
+\OT1/cmr/m/n/12 Common operational risks include policy misconfiguration, incon
+sistent machine setup,
+ []
+
+
+
+[28]
+Chapter 6.
+
+Overfull \hbox (12.9838pt too wide) in paragraph at lines 643--643
+[]\OT1/cmr/bx/n/17.28 Complex Engineering Problems Associated with
+ []
+
+
+Overfull \hbox (57.5593pt too wide) in paragraph at lines 651--651
+[]\OT1/cmr/bx/n/14.4 Complexity Dimension 2: Offline Capability vs Synchronizat
+ion 
  []
 
 
@@ -950,128 +937,81 @@ n testing infrastructure
 [29
 
 ]
+Overfull \hbox (1.83937pt too wide) in paragraph at lines 655--656
+\OT1/cmr/m/n/12 Host-level controls may behave differently across operating sys
+tems, requiring adaptive
+ []
+
+
+Overfull \hbox (14.5438pt too wide) in paragraph at lines 657--657
+[]\OT1/cmr/bx/n/17.28 Complex Engineering Activities Associated with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--678
+[]\OT1/cmr/m/n/12 Runtime crash at
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--680
+[]\OT1/cmr/m/n/12 Cross-platform
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--681
+[]\OT1/cmr/m/n/12 Capability flags and progressive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 682--682
+[]\OT1/cmr/m/n/12 Operator
+ []
+
+
+Underfull \hbox (badness 4954) in paragraph at lines 682--683
+[]\OT1/cmr/m/n/12 Pre-exam checklist and validation
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--684
+[]\OT1/cmr/m/n/12 Data retention
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
+[]\OT1/cmr/m/n/12 Defined archival and deletion
+ []
+
+
 
 [30]
+
+[31]
+Chapter 7.
+
+Overfull \hbox (35.5918pt too wide) in paragraph at lines 699--700
+\OT1/cmr/m/n/12 design emphasizes deterministic operation, transparent policy e
+nforcement, and maintainable
+ []
+
+
+Overfull \hbox (19.68178pt too wide) in paragraph at lines 704--705
+\OT1/cmr/m/n/12 larger and more heterogeneous environments. Automated regressio
+n testing infrastructure
+ []
+
+
+
+[32
+
+]
+
+[33]
 Appendix A.
 
-
-[31
-
-]
-
-[32]
-Appendix B.
-
-Overfull \hbox (0.47272pt too wide) in paragraph at lines 716--717
-\OT1/cmr/m/n/12 The frontend codebase is split into focused modules for app boo
-tstrap, editor handling,
- []
-
-
-Overfull \hbox (18.57623pt too wide) in paragraph at lines 719--720
-\OT1/cmr/m/n/12 session runtime, and persistence. This structure aligns impleme
-ntation with responsibility
- []
-
-
-
-[33
-
-]
-Appendix C.
-
-Underfull \hbox (badness 10000) in paragraph at lines 728--728
-[]\OT1/cmr/bx/n/12 Expected
- []
-
-
-Underfull \hbox (badness 2753) in paragraph at lines 730--730
-[]\OT1/cmr/m/n/12 Admin creates a valid
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 730--730
-[]\OT1/cmr/m/n/12 Session code
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 732--732
-[]\OT1/cmr/m/n/12 Participant
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 738--738
-[]\OT1/cmr/m/n/12 Operation
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 738--738
-\OT1/cmr/m/n/12 blocked and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 740--740
-[]\OT1/cmr/m/n/12 Submission before
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 740--740
-[]\OT1/cmr/m/n/12 Submission
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 742--742
-[]\OT1/cmr/m/n/12 Auto-submission
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 744--744
-[]\OT1/cmr/m/n/12 Denied by
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 746--746
-[]\OT1/cmr/m/n/12 Dashboard fetch after
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 748--748
-[]\OT1/cmr/m/n/12 Export post-session
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 748--748
-[]\OT1/cmr/m/n/12 Output
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 759--759
-[]\OT1/cmr/bx/n/12 Expected
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 761--761
-[]\OT1/cmr/m/n/12 Reject join
- []
-
-
-Underfull \hbox (badness 3219) in paragraph at lines 763--763
-[]\OT1/cmr/m/n/12 Reject and log
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 767--767
-[]\OT1/cmr/m/n/12 Single stable
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 767--768
-[]\OT1/cmr/m/n/12 Idempotent handling
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 769--769
-[]\OT1/cmr/m/n/12 Permission
+Overfull \hbox (4.94212pt too wide) in paragraph at lines 743--744
+\OT1/cmr/m/n/12 Prepare question set, verify session duration, confirm policy p
+rofile, and test submission
  []
 
 
@@ -1079,71 +1019,190 @@ Underfull \hbox (badness 10000) in paragraph at lines 769--769
 [34
 
 ]
+Overfull \hbox (23.1762pt too wide) in paragraph at lines 746--747
+\OT1/cmr/m/n/12 when required. Record exceptional events in an invigilator log 
+for post-exam reconciliation. 
+ []
+
+
+Overfull \hbox (0.47272pt too wide) in paragraph at lines 753--754
+\OT1/cmr/m/n/12 The frontend codebase is split into focused modules for app boo
+tstrap, editor handling,
+ []
+
+
+Overfull \hbox (18.57623pt too wide) in paragraph at lines 756--757
+\OT1/cmr/m/n/12 session runtime, and persistence. This structure aligns impleme
+ntation with responsibility
+ []
+
+
+Overfull \hbox (2.62686pt too wide) in paragraph at lines 759--760
+\OT1/cmr/m/n/12 ensures consistent enforcement outcomes and reduces duplicated 
+validation code across
+ []
+
+
 
 [35]
+Underfull \hbox (badness 10000) in paragraph at lines 767--767
+[]\OT1/cmr/bx/n/12 Expected
+ []
+
+
+Underfull \hbox (badness 2753) in paragraph at lines 769--769
+[]\OT1/cmr/m/n/12 Admin creates a valid
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 769--769
+[]\OT1/cmr/m/n/12 Session code
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 771--771
+[]\OT1/cmr/m/n/12 Participant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 777--777
+[]\OT1/cmr/m/n/12 Operation
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 777--777
+\OT1/cmr/m/n/12 blocked and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 779--779
+[]\OT1/cmr/m/n/12 Submission before
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 779--779
+[]\OT1/cmr/m/n/12 Submission
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 781--781
+[]\OT1/cmr/m/n/12 Auto-submission
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 783--783
+[]\OT1/cmr/m/n/12 Denied by
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 785--785
+[]\OT1/cmr/m/n/12 Dashboard fetch after
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 787--787
+[]\OT1/cmr/m/n/12 Export post-session
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 787--787
+[]\OT1/cmr/m/n/12 Output
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 798--798
+[]\OT1/cmr/bx/n/12 Expected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 800--800
+[]\OT1/cmr/m/n/12 Reject join
+ []
+
+
+Underfull \hbox (badness 3219) in paragraph at lines 802--802
+[]\OT1/cmr/m/n/12 Reject and log
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 806--806
+[]\OT1/cmr/m/n/12 Single stable
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 806--807
+[]\OT1/cmr/m/n/12 Idempotent handling
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+[]\OT1/cmr/m/n/12 Permission
+ []
+
+
+Overfull \hbox (14.22906pt too wide) in paragraph at lines 817--818
+\OT1/cmr/m/n/12 backend and security architecture in Rust. His work includes co
+mmand-layer structuring,
+ []
+
+
+Overfull \hbox (23.58081pt too wide) in paragraph at lines 817--818
+\OT1/cmr/m/n/12 judging orchestration, and backend service components for stora
+ge/transport coordination.
+ []
+
+
+Overfull \hbox (18.55447pt too wide) in paragraph at lines 820--821
+\OT1/cmr/m/n/12 jointly performed debugging, scenario-based testing, report ana
+lysis, and final deployment
+ []
+
+
 
 [36]
-Appendix D.
 
-
-[37
-
-]
-Appendix E.
-
-Overfull \hbox (18.84615pt too wide) in paragraph at lines 785--786
+[37]
+Overfull \hbox (18.84615pt too wide) in paragraph at lines 824--825
 \OT1/cmr/m/n/12 Phase-1 includes policy profile templates, improved dashboard s
 ummaries, and automated
  []
 
 
-Overfull \hbox (3.11436pt too wide) in paragraph at lines 788--789
+Overfull \hbox (3.11436pt too wide) in paragraph at lines 827--828
 \OT1/cmr/m/n/12 Phase-2 includes stronger execution isolation, richer monitorin
 g analytics, and optional
  []
 
 
-Overfull \hbox (30.59602pt too wide) in paragraph at lines 791--792
+
+[38]
+Overfull \hbox (30.59602pt too wide) in paragraph at lines 830--831
 \OT1/cmr/m/n/12 Phase-3 includes cross-campus orchestration, plagiarism-assista
 nce modules, and automated
  []
 
 
 
-[38
-
-]
-Overfull \hbox (14.30316pt too wide) in paragraph at lines 808--809
-[]\OT1/cmr/m/n/12 The Rust Team, ``The Rust Programming Language,'' https://www
-.rust-lang.org/. 
- []
-
-
-Overfull \hbox (62.19989pt too wide) in paragraph at lines 810--811
-[]\OT1/cmr/m/n/12 Monaco Editor Documentation, ``Monaco Editor API,'' https://m
-icrosoft.github.io/monaco-
- []
-
-
-
-[39
-
-]
-
-[40] (sample.aux)
+[39]
+No file sample.bbl.
+(sample.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 2688 strings out of 469806
- 45500 string characters out of 2467523
- 453576 words of memory out of 3000000
- 31302 multiletter control sequences out of 15000+600000
+ 2302 strings out of 469806
+ 36567 string characters out of 2467523
+ 450756 words of memory out of 3000000
+ 30941 multiletter control sequences out of 15000+600000
  634545 words of font info for 63 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 59i,11n,67p,651b,273s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,11n,65p,651b,273s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/
 ljfour/jknappen/ec/dpi600/tcrm1200.pk></Users/mehedihasan/Library/Application S
 upport/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/
@@ -1156,9 +1215,9 @@ cmr12.pfb></Users/mehedihasan/Library/Application Support/MiKTeX/texmfs/install
 n Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Use
 rs/mehedihasan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/pu
 blic/amsfonts/cm/cmti12.pfb>
-Output written on sample.pdf (52 pages, 169688 bytes).
+Output written on sample.pdf (50 pages, 172329 bytes).
 PDF statistics:
- 210 PDF objects out of 1000 (max. 8388607)
+ 204 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
